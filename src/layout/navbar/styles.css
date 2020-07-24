@@ -1,0 +1,11 @@
+#nav{
+    transition: 0.5s ease;
+    animation: show;
+    animation-duration: 0.7s;
+}
+
+
+@keyframes show{
+    from {margin-left: -20vh;}
+    to {margin-left: 0;}
+}

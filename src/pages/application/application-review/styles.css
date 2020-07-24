@@ -1,0 +1,9 @@
+@media (max-width: 640px){
+    table{
+        font-size: 3vw;
+    }
+    
+}
+tr:nth-child(even) {
+    background-color:#cbd5e0;
+}
