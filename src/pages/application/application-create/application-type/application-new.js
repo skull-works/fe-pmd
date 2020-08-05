@@ -28,7 +28,7 @@ const ApplicationNew = () => {
             </div>
             <div className="mt-6 pb-6 flex flex-col">
                 <div className="flex flex-col md:flex-row">
-                    <ul className="mr-8 mt-2 md:mt-0">
+                    <ul className="mr-8 mt-2 md:mt-0" data-testid="info-details">
                         <Input label="Area Code:"       name="area_code"       callback={ApplicationActions.InputChange} parameters={store}/>
                         <Input label="First Name:"      name="first_name"      callback={ApplicationActions.InputChange} parameters={store}/>
                         <Input label="Last Name:"       name="last_name"       callback={ApplicationActions.InputChange} parameters={store}/>
