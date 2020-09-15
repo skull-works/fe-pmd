@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+//authentication
+import { IsUserStillLoggedIn } from '../mainHooks/AuthHooks'
 
 const Home = () => {
+    IsUserStillLoggedIn();
     return (
          <div id="content-wrapper">
                 <div className="w-8/12 pt-20 mx-auto text-gray-200 flex flex-col md:flex-row justify-around">

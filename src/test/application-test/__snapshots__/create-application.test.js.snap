@@ -1,0 +1,941 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendering Click button New then render form application new: New-application 1`] = `
+<DocumentFragment>
+  <title
+    title="Applications"
+  >
+    Applications
+  </title>
+  <div
+    id="header-wrapper"
+  >
+    <div
+      class="w-screen sm:w-full h-20vh bg-green-500 flex flex-wrap content-center justify-center"
+    >
+      <h1
+        class="text-lg md:text-4xl"
+      >
+        CREATE APPLICATION
+      </h1>
+    </div>
+  </div>
+  <div
+    class="h-80vh flex flex-col sm:flex-row"
+  >
+    <div
+      class="w-auto"
+      data-testid="navbar-wrapper"
+      id="navbar-wrapper"
+    >
+      <div
+        class="block h-full pb-8 sm:pb-0 sm:w-20vh bg-gray-300 sm:bg-gray-200 shadow-md sm:shadow-inner overflow-auto whitespace-normal"
+        data-testid="navbar"
+        id="navHide"
+      >
+        <div
+          class="w-3/12 sm:w-8/12 mt-8 mx-auto rounded-full overflow-auto"
+        >
+          <img
+            alt="logo"
+            src="logo.png"
+          />
+        </div>
+        <ul
+          class="text-center pt-8"
+        >
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              href="/home"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              aria-current="page"
+              class="active"
+              href="/application"
+              style="color: blue;"
+            >
+              Application
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              href="/customer"
+            >
+              Customer
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              href="/reports"
+            >
+              Reports
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <button
+              class="focus:outline-none"
+            >
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="fixed top-0 left-0 m-2"
+        id="button"
+      >
+        <button
+          class="focus:outline-none"
+          data-testid="nav-button"
+        >
+          <svg
+            height="24"
+            viewBox="0 0 24 24"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 22h-4v-4h4v4zm0-12h-4v4h4v-4zm0-8h-4v4h4v-4zm3 0v4h17v-4h-17zm0 12h17v-4h-17v4zm0 8h17v-4h-17v4z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="h-80vh w-full overflow-auto whitespace-normal bg-gray-200"
+      id="content-wrapper"
+    >
+      <div
+        class="w-9/12 flex flex-col md:flex-row justify-around mx-auto"
+      >
+        <button
+          class="w-full mt-2 md:w-2/12 h-10 flex flex-wrap content-center justify-center rounded-md bg-gray-800 text-gray-300 focus:outline-none hover:bg-green-400"
+        >
+          New
+        </button>
+        <button
+          class="w-full mt-2 md:w-2/12 h-10 flex flex-wrap content-center justify-center rounded-md bg-gray-800 text-gray-300 focus:outline-none hover:bg-green-400"
+        >
+          Renew/Special
+        </button>
+      </div>
+      <div
+        class="w-9/12 mt-12 flex flex-col md:flex-row justify-around  mx-auto"
+      >
+        <div
+          class="w-9/12 mx-auto"
+        >
+          <div
+            class="text-sm md:text-2xl"
+          >
+            <h1>
+              Customer New
+            </h1>
+          </div>
+          <div
+            class="mt-6 pb-6 flex flex-col"
+          >
+            <div
+              class="flex flex-col md:flex-row"
+            >
+              <ul
+                class="mr-8 mt-2 md:mt-0"
+                data-testid="info-details"
+              >
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="area_code"
+                  >
+                    Area Code:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="area_code"
+                    id="area_code"
+                    name="area_code"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="first_name"
+                  >
+                    First Name:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="first_name"
+                    id="first_name"
+                    name="first_name"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="last_name"
+                  >
+                    Last Name:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="last_name"
+                    id="last_name"
+                    name="last_name"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="birth_date"
+                  >
+                    Birth Date:
+                  </label>
+                  <input
+                    class="border h-7 rounded-md focus:outline-none focus:border-blue-500"
+                    id="birth_date"
+                    name="birth_date"
+                    type="date"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="age"
+                  >
+                    Age:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="age"
+                    id="age"
+                    name="age"
+                    type="text"
+                  />
+                </li>
+              </ul>
+              <ul
+                class="mr-8 mt-2 md:mt-0"
+              >
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="contact_no"
+                  >
+                    Contact Number:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="contact_no"
+                    id="contact_no"
+                    name="contact_no"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="street_address"
+                  >
+                    Street Address:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="street_address"
+                    id="street_address"
+                    name="street_address"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="barangay"
+                  >
+                    Barangay:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="barangay"
+                    id="barangay"
+                    name="barangay"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="city"
+                  >
+                    City:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="city"
+                    id="city"
+                    name="city"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="province"
+                  >
+                    Province:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="province"
+                    id="province"
+                    name="province"
+                    type="text"
+                  />
+                </li>
+              </ul>
+              <ul
+                class="mr-8 mt-2 md:mt-0"
+              >
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="religion"
+                  >
+                    Religion:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="religion"
+                    id="religion"
+                    name="religion"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="nationality"
+                  >
+                    Nationality:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="nationality"
+                    id="nationality"
+                    name="nationality"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="source_of_income"
+                  >
+                    Source of Income:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="source_of_income"
+                    id="source_of_income"
+                    name="source_of_income"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="length_of_service"
+                  >
+                    Length of Service:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="length_of_service"
+                    id="length_of_service"
+                    name="length_of_service"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="length_of_stay"
+                  >
+                    Length of Stay:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="length_of_stay"
+                    id="length_of_stay"
+                    name="length_of_stay"
+                    type="text"
+                  />
+                </li>
+              </ul>
+              <ul
+                class="mr-8 mt-2 md:mt-0"
+              >
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="occupation"
+                  >
+                    Occupation:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="occupation"
+                    id="occupation"
+                    name="occupation"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="civil_status"
+                  >
+                    Civil status:
+                  </label>
+                  <select
+                    class="w-40 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    id="civil_status"
+                    name="civil_status"
+                    type="text"
+                  >
+                    <option>
+                      ---
+                    </option>
+                    <option>
+                      M
+                    </option>
+                    <option>
+                      S
+                    </option>
+                  </select>
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="days_to_pay"
+                  >
+                    Days to pay:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="days_to_pay"
+                    id="days_to_pay"
+                    name="days_to_pay"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="amount_loan"
+                  >
+                    Loan amount:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="amount_loan"
+                    id="amount_loan"
+                    name="amount_loan"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="pay_type"
+                  >
+                    Pay type:
+                  </label>
+                  <select
+                    class="w-40 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    id="pay_type"
+                    name="pay_type"
+                    type="text"
+                  >
+                    <option>
+                      ---
+                    </option>
+                    <option>
+                      DAILY
+                    </option>
+                    <option>
+                      WEEKLY
+                    </option>
+                    <option>
+                      MONTHLY
+                    </option>
+                  </select>
+                </li>
+              </ul>
+              <ul
+                class="mr-8 mt-2 md:mt-0"
+              >
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="pay_breakdown"
+                  >
+                    Pay breakdown:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="pay_breakdown"
+                    id="pay_breakdown"
+                    name="pay_breakdown"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="proc_fee"
+                  >
+                    Processing Fee:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="proc_fee"
+                    id="proc_fee"
+                    name="proc_fee"
+                    type="text"
+                  />
+                </li>
+                <label
+                  for="remarks"
+                >
+                  Remarks:
+                </label>
+                 
+                <br />
+                <textarea
+                  class="rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                  id="remarks"
+                  name="remarks"
+                />
+              </ul>
+            </div>
+          </div>
+          <hr
+            class="py-2"
+          />
+          <h1>
+            No spouse
+          </h1>
+          <div
+            class="pb-12 mt-4"
+          >
+            <button
+              class="w-40 mt-4 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
+              type="button"
+            >
+              Create Application
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Rendering Click button Renew/Special then render form application Renew/Special: Renew/Special-application 1`] = `
+<DocumentFragment>
+  <title
+    title="Applications"
+  >
+    Applications
+  </title>
+  <div
+    id="header-wrapper"
+  >
+    <div
+      class="w-screen sm:w-full h-20vh bg-green-500 flex flex-wrap content-center justify-center"
+    >
+      <h1
+        class="text-lg md:text-4xl"
+      >
+        CREATE APPLICATION
+      </h1>
+    </div>
+  </div>
+  <div
+    class="h-80vh flex flex-col sm:flex-row"
+  >
+    <div
+      class="w-auto"
+      data-testid="navbar-wrapper"
+      id="navbar-wrapper"
+    >
+      <div
+        class="block h-full pb-8 sm:pb-0 sm:w-20vh bg-gray-300 sm:bg-gray-200 shadow-md sm:shadow-inner overflow-auto whitespace-normal"
+        data-testid="navbar"
+        id="navHide"
+      >
+        <div
+          class="w-3/12 sm:w-8/12 mt-8 mx-auto rounded-full overflow-auto"
+        >
+          <img
+            alt="logo"
+            src="logo.png"
+          />
+        </div>
+        <ul
+          class="text-center pt-8"
+        >
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              href="/home"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              aria-current="page"
+              class="active"
+              href="/application"
+              style="color: blue;"
+            >
+              Application
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              href="/customer"
+            >
+              Customer
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              href="/reports"
+            >
+              Reports
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <button
+              class="focus:outline-none"
+            >
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="fixed top-0 left-0 m-2"
+        id="button"
+      >
+        <button
+          class="focus:outline-none"
+          data-testid="nav-button"
+        >
+          <svg
+            height="24"
+            viewBox="0 0 24 24"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 22h-4v-4h4v4zm0-12h-4v4h4v-4zm0-8h-4v4h4v-4zm3 0v4h17v-4h-17zm0 12h17v-4h-17v4zm0 8h17v-4h-17v4z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="h-80vh w-full overflow-auto whitespace-normal bg-gray-200"
+      id="content-wrapper"
+    >
+      <div
+        class="w-9/12 flex flex-col md:flex-row justify-around mx-auto"
+      >
+        <button
+          class="w-full mt-2 md:w-2/12 h-10 flex flex-wrap content-center justify-center rounded-md bg-gray-800 text-gray-300 focus:outline-none hover:bg-green-400"
+        >
+          New
+        </button>
+        <button
+          class="w-full mt-2 md:w-2/12 h-10 flex flex-wrap content-center justify-center rounded-md bg-gray-800 text-gray-300 focus:outline-none hover:bg-green-400"
+        >
+          Renew/Special
+        </button>
+      </div>
+      <div
+        class="w-9/12 mt-12 flex flex-col md:flex-row justify-around  mx-auto"
+      >
+        <div
+          class="w-9/12 mx-auto"
+        >
+          <div
+            class="text-sm md:text-2xl"
+          >
+            <h1>
+              Customer Renew
+            </h1>
+          </div>
+          <div
+            class="mt-6 flex flex-col"
+          >
+            <div
+              class="flex flex-col md:flex-row"
+            >
+              <ul
+                class="mr-8 mt-2 md:mt-0"
+              >
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="area_code"
+                  >
+                    Area Code:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="area_code"
+                    id="area_code"
+                    name="area_code"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="first_name"
+                  >
+                    First Name:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="first_name"
+                    id="first_name"
+                    name="first_name"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="last_name"
+                  >
+                    Last Name:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="last_name"
+                    id="last_name"
+                    name="last_name"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="type_loan"
+                  >
+                    Type of Loan:
+                  </label>
+                  <select
+                    class="w-40 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    id="type_loan"
+                    name="type_loan"
+                    type="text"
+                  >
+                    <option>
+                      ---
+                    </option>
+                    <option>
+                      RENEW
+                    </option>
+                    <option>
+                      SP
+                    </option>
+                  </select>
+                </li>
+              </ul>
+              <ul
+                class="mr-8 mt-2 md:mt-0"
+              >
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="days_to_pay"
+                  >
+                    Days to pay:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="days_to_pay"
+                    id="days_to_pay"
+                    name="days_to_pay"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="amount_loan"
+                  >
+                    Loan amount:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="amount_loan"
+                    id="amount_loan"
+                    name="amount_loan"
+                    type="text"
+                  />
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="pay_type"
+                  >
+                    Pay type:
+                  </label>
+                  <select
+                    class="w-40 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    id="pay_type"
+                    name="pay_type"
+                    type="text"
+                  >
+                    <option>
+                      ---
+                    </option>
+                    <option>
+                      DAILY
+                    </option>
+                    <option>
+                      WEEKLY
+                    </option>
+                    <option>
+                      MONTHLY
+                    </option>
+                  </select>
+                </li>
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="pay_breakdown"
+                  >
+                    Pay breakdown:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="pay_breakdown"
+                    id="pay_breakdown"
+                    name="pay_breakdown"
+                    type="text"
+                  />
+                </li>
+              </ul>
+              <ul
+                class="mr-8 mt-2 md:mt-0"
+              >
+                <li
+                  class="flex flex-col"
+                >
+                  <label
+                    for="proc_fee"
+                  >
+                    Processing Fee:
+                  </label>
+                  <input
+                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    data-testid="proc_fee"
+                    id="proc_fee"
+                    name="proc_fee"
+                    type="text"
+                  />
+                </li>
+                <label
+                  for="remarks"
+                >
+                  Remarks:
+                </label>
+                 
+                <br />
+                <textarea
+                  class="rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                  id="remarks"
+                  name="remarks"
+                />
+              </ul>
+            </div>
+            <div>
+              <button
+                class="w-40 mt-4 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
+                type="button"
+              >
+                Create Application
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

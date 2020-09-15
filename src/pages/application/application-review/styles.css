@@ -1,9 +1,10 @@
 @media (max-width: 640px){
-    table{
-        font-size: 3vw;
+    .applicationTable{
+        font-size: 1.9vw;
     }
     
 }
-tr:nth-child(even) {
+
+.applicationTable tr:nth-child(even) {
     background-color:#cbd5e0;
 }

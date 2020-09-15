@@ -1,28 +1,45 @@
 import React, { useReducer } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useHistory } from 'react-router-dom';
 import './styles.css'
+import AuthenticationController from '../../controllers/authentication';
+
+
+
+async function logoutSession(history) {
+    let isLogout = await AuthenticationController.willLogout();
+    if(isLogout) history.replace({ pathname: "/" });
+}
+
 
 
 const Navbar = () => {
     const [Nav, setNav] = useReducer(Nav => !Nav, false)
+    let history = useHistory();
     return(
         <div id="navbar-wrapper" data-testid="navbar-wrapper" className="w-auto">
-            <div id="nav" data-testid="navbar" className={Nav?'block h-full pb-8 sm:pb-0 sm:w-20vh bg-gray-200 shadow-inner overflow-auto whitespace-normal':'hidden h-full w-20vh '}>
+            {/* <div id='nav' data-testid="navbar" className={Nav?'block h-full pb-8 sm:pb-0 sm:w-20vh bg-gray-300 sm:bg-gray-200 shadow-md sm:shadow-inner overflow-auto whitespace-normal':'hidden h-full w-20vh '}> */}
+            <div id={Nav?'nav':'navHide'} data-testid="navbar" className={'block h-full pb-8 sm:pb-0 sm:w-20vh bg-gray-300 sm:bg-gray-200 shadow-md sm:shadow-inner overflow-auto whitespace-normal'}>
+                <div className="w-3/12 sm:w-8/12 mt-8 mx-auto rounded-full overflow-auto">
+                    <img alt="logo" src={require('../../images/logo.png')} />
+                </div>
                 <ul className="text-center pt-8">
                     <li className="py-1 hover:text-red-400">
                         <Link to="/home">Home</Link>
                     </li>
                     <li className="py-1 hover:text-red-400">
-                        <Link to="/application">Application</Link>
+                        <NavLink to="/application" activeStyle={{color:"blue"}}>Application</NavLink>
                     </li >
                     <li className="py-1 hover:text-red-400">
-                        <Link to="/customer">Customer</Link>
+                        <NavLink to="/customer" activeStyle={{color:"blue"}}>Customer</NavLink>
                     </li >
                     <li className="py-1 hover:text-red-400">
                         <Link to="/reports">Reports</Link>
                     </li>
                     <li className="py-1 hover:text-red-400">
-                        <Link to="/logout">Logout</Link>
+                        <button className="focus:outline-none"
+                                onClick={() => logoutSession(history)}>
+                            Logout
+                        </button>
                     </li>
                 </ul>
             </div>

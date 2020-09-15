@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { useLocation } from 'react-router-dom';
 //layouts
 import Header from '../../layout/header/header';
 import Navbar from '../../layout/navbar/navbar';
@@ -6,12 +7,14 @@ import Navbar from '../../layout/navbar/navbar';
 import ApplicationActions from '../../actions/application';
 
 
-const Application = ({location}) => {
+const Application = () => {
     const [text, setText] = useState('APPLICATIONS');
+    let location = useLocation();
+
     useEffect(() => {
         ApplicationActions.HeaderText(location.search.split("=")[1], setText);
     },[location.search])
-    
+
     return (
         <>
             <Header text={text} title="Applications"/>

@@ -1,26 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 //controllers
 import ApplicationController from '../../../../controllers/application';
-//actions
-import ApplicationActions from '../../../../actions/application'
 //elements
 import Input from '../../../../elements/input';
 import Select from '../../../../elements/select';
 import Date from '../../../../elements/date';
+//actions
+import ApplicationActions from '../../../../actions/application';
+import GeneralActions from '../../../../actions/general';
+import { Hooks } from './hooks';
 
-const ApplicationNew = () => {
-    const [inputs, setInputs] = useState({type_loan: 'NEW'});
-    const [isMarried, setMarried] = useState(false);
-    const [isDaily, setDaily] = useState(true);
-    const store = {
-        setInputs: setInputs,
-        inputs: inputs,
-        isMarried: isMarried,
-        setMarried: setMarried,
-        isDaily: isDaily,
-        setDaily: setDaily
-    }
-
+const ApplicationNew = ({csrf}) => {
+    const store = Hooks();
+    const { SpouseContent, MonthsToPayInput } = ApplicationActions;
+    const { InputChange } = GeneralActions;
     return (
         <div className="w-9/12 mx-auto">
             <div className="text-sm md:text-2xl">
@@ -29,49 +22,52 @@ const ApplicationNew = () => {
             <div className="mt-6 pb-6 flex flex-col">
                 <div className="flex flex-col md:flex-row">
                     <ul className="mr-8 mt-2 md:mt-0" data-testid="info-details">
-                        <Input label="Area Code:"       name="area_code"       callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Input label="First Name:"      name="first_name"      callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Input label="Last Name:"       name="last_name"       callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Date  label="Birth Date:"      name="birth_date"      callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Input label="Age:"             name="age"             callback={ApplicationActions.InputChange} parameters={store}/>
+                        <Input label="Area Code:"       name="area_code"        store={store}/>
+                        <Input label="First Name:"      name="first_name"       store={store}/>
+                        <Input label="Last Name:"       name="last_name"        store={store}/>
+                        <Date  label="Birth Date:"      name="birth_date"       store={store}/>
+                        <Input label="Age:"             name="age"              store={store}/>
                     </ul>
                     <ul className="mr-8 mt-2 md:mt-0">
-                        <Input label="Contact Number:"  name="contact_no"      callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Input label="Street Address:"  name="street_address"  callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Input label="Barangay:"        name="barangay"        callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Input label="City:"            name="city"            callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Input label="Province:"        name="province"        callback={ApplicationActions.InputChange} parameters={store}/>
+                        <Input label="Contact Number:"  name="contact_no"       store={store}/>
+                        <Input label="Street Address:"  name="street_address"   store={store}/>
+                        <Input label="Barangay:"        name="barangay"         store={store}/>
+                        <Input label="City:"            name="city"             store={store}/>
+                        <Input label="Province:"        name="province"         store={store}/>
                     </ul>
                     <ul className="mr-8 mt-2 md:mt-0">
-                        <Input label="Religion:"          name="religion"            callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Input label="Nationality:"       name="nationality"         callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Input label="Source of Income:"  name="source_of_income"    callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Input label="Length of Service:" name="length_of_service"   callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Input label="Length of Stay:"    name="length_of_stay"      callback={ApplicationActions.InputChange} parameters={store}/>
+                        <Input label="Religion:"          name="religion"             store={store}/>
+                        <Input label="Nationality:"       name="nationality"          store={store}/>
+                        <Input label="Source of Income:"  name="source_of_income"     store={store}/>
+                        <Input label="Length of Service:" name="length_of_service"    store={store}/>
+                        <Input label="Length of Stay:"    name="length_of_stay"       store={store}/>
                     </ul>
                     <ul className="mr-8 mt-2 md:mt-0">
-                        <Input  label="Occupation:"      name="occupation"          callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Select label="Civil status:"    name="civil_status"        callback={ApplicationActions.InputChange} parameters={store} options={['M','S']}/>
-                        <Input  label="Days to pay:"     name="days_to_pay"         callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Input  label="Loan amount:"     name="amount_loan"         callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Select label="Pay type:"        name="pay_type"            callback={ApplicationActions.InputChange} parameters={store} options={['DAILY','WEEKLY', 'MONTHLY']}/>
-                        <ApplicationActions.MonthsToPayInput store={store} />
+                        <Input  label="Occupation:"      name="occupation"           store={store}/>
+                        <Select label="Civil status:"    name="civil_status"         store={store} options={['M','S']}/>
+                        <Input  label="Days to pay:"     name="days_to_pay"          store={store}/>
+                        <Input  label="Loan amount:"     name="amount_loan"          store={store}/>
+                        <Select label="Pay type:"        name="pay_type"             store={store} options={['DAILY','WEEKLY', 'MONTHLY']}/>
+                        <MonthsToPayInput store={store} />
                     </ul>
                     <ul className="mr-8 mt-2 md:mt-0">
-                        <Input label="Pay breakdown:"   name="pay_breakdown"     callback={ApplicationActions.InputChange} parameters={store}/>
-                        <Input label="Processing Fee:"  name="proc_fee"          callback={ApplicationActions.InputChange} parameters={store}/>
-                        <label>Remarks</label> <br />
-                        <textarea name="remarks" onChange={e => ApplicationActions.InputChange(e.target, store)} className="rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"></textarea>
+                        <Input label="Pay breakdown:"   name="pay_breakdown"      store={store}/>
+                        <Input label="Processing Fee:"  name="proc_fee"           store={store}/>
+                        <label htmlFor="remarks">Remarks:</label> <br />
+                        <textarea name="remarks" 
+                                  id="remarks"
+                                  onChange={e => InputChange('remarks', e.target.value, store)} 
+                                  className="rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"></textarea>
                     </ul>
                 </div>
             </div>
             <hr className="py-2"/> 
             {/*  Spouse Inputs */}
-            <ApplicationActions.SpouseContent store={store} />
+            <SpouseContent store={store}/>
 
             <div className="pb-12 mt-4">
                 <button type="button" className="w-40 mt-4 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
-                        onClick={() => ApplicationController.AddApplication(store.inputs)} >
+                        onClick={() => ApplicationController.AddApplication(store.inputs, csrf)} >
                     Create Application
                 </button>
             </div>

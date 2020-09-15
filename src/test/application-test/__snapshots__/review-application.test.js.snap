@@ -1,0 +1,823 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Application details Update Application details Update area_code, first_name, last_name then show table record view and in that view changes should reflect Approved: Success-status-is-approved-update 1`] = `
+<DocumentFragment>
+  <title
+    title="Applications"
+  >
+    Applications
+  </title>
+  <div
+    id="header-wrapper"
+  >
+    <div
+      class="w-screen sm:w-full h-20vh bg-green-500 flex flex-wrap content-center justify-center"
+    >
+      <h1
+        class="text-lg md:text-4xl"
+      >
+        REVIEW APPLICATION
+      </h1>
+    </div>
+  </div>
+  <div
+    class="h-80vh flex flex-col sm:flex-row"
+  >
+    <div
+      class="w-auto"
+      data-testid="navbar-wrapper"
+      id="navbar-wrapper"
+    >
+      <div
+        class="block h-full pb-8 sm:pb-0 sm:w-20vh bg-gray-300 sm:bg-gray-200 shadow-md sm:shadow-inner overflow-auto whitespace-normal"
+        data-testid="navbar"
+        id="navHide"
+      >
+        <div
+          class="w-3/12 sm:w-8/12 mt-8 mx-auto rounded-full overflow-auto"
+        >
+          <img
+            alt="logo"
+            src="logo.png"
+          />
+        </div>
+        <ul
+          class="text-center pt-8"
+        >
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              href="/home"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              aria-current="page"
+              class="active"
+              href="/application"
+              style="color: blue;"
+            >
+              Application
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              href="/customer"
+            >
+              Customer
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              href="/reports"
+            >
+              Reports
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <button
+              class="focus:outline-none"
+            >
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="fixed top-0 left-0 m-2"
+        id="button"
+      >
+        <button
+          class="focus:outline-none"
+          data-testid="nav-button"
+        >
+          <svg
+            height="24"
+            viewBox="0 0 24 24"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 22h-4v-4h4v4zm0-12h-4v4h4v-4zm0-8h-4v4h4v-4zm3 0v4h17v-4h-17zm0 12h17v-4h-17v4zm0 8h17v-4h-17v4z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="h-80vh w-full overflow-auto whitespace-normal bg-gray-200"
+      id="content-wrapper"
+    >
+      <div
+        id="content-wrapper"
+      >
+        <div
+          class="flex justify-end bg-gray-200"
+        >
+          <button
+            class="p-2 focus:outline-none hover:bg-gray-300"
+            data-testid="filter-button"
+          >
+            <svg
+              height="28"
+              viewBox="0 0 24 24"
+              width="34"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.151 17.943l-4.143-4.102-4.117 4.159-1.833-1.833 4.104-4.157-4.162-4.119 1.833-1.833 4.155 4.102 4.106-4.16 1.849 1.849-4.1 4.141 4.157 4.104-1.849 1.849z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="flex justify-center bg-gray-300 shadow-inner"
+        >
+          <div
+            class="w-11/12 pt-4 pb-6 md:w-auto md:h-40 md:pr-24 flex flex-col md:flex-row"
+          >
+            <div
+              class="px-3"
+            >
+              <li
+                class="flex flex-col"
+              >
+                <label
+                  for="first_name"
+                >
+                  First name:
+                </label>
+                <input
+                  class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                  data-testid="first_name"
+                  id="first_name"
+                  name="first_name"
+                  type="text"
+                />
+              </li>
+              <li
+                class="flex flex-col"
+              >
+                <label
+                  for="last_name"
+                >
+                  Last name:
+                </label>
+                <input
+                  class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                  data-testid="last_name"
+                  id="last_name"
+                  name="last_name"
+                  type="text"
+                />
+              </li>
+            </div>
+            <div
+              class="px-3"
+            >
+              <li
+                class="flex flex-col"
+              >
+                <label
+                  for="type_loan"
+                >
+                  Loan type:
+                </label>
+                <select
+                  class="w-40 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                  id="type_loan"
+                  name="type_loan"
+                  type="text"
+                >
+                  <option>
+                    ---
+                  </option>
+                  <option>
+                    NEW
+                  </option>
+                  <option>
+                    RENEW
+                  </option>
+                  <option>
+                    SP
+                  </option>
+                </select>
+              </li>
+              <li
+                class="flex flex-col"
+              >
+                <label
+                  for="status"
+                >
+                  Status:
+                </label>
+                <select
+                  class="w-40 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                  id="status"
+                  name="status"
+                  type="text"
+                >
+                  <option>
+                    ---
+                  </option>
+                  <option>
+                    PROCESSING
+                  </option>
+                  <option>
+                    APPROVED
+                  </option>
+                  <option>
+                    REJECTED
+                  </option>
+                  <option>
+                    ONGOING
+                  </option>
+                  <option>
+                    CLOSED
+                  </option>
+                </select>
+              </li>
+            </div>
+            <div
+              class="px-3"
+            >
+              <li
+                class="flex flex-col"
+              >
+                <label
+                  for="start_date"
+                >
+                  From:
+                </label>
+                <input
+                  class="border h-7 rounded-md focus:outline-none focus:border-blue-500"
+                  id="start_date"
+                  name="start_date"
+                  type="date"
+                />
+              </li>
+              <li
+                class="flex flex-col"
+              >
+                <label
+                  for="end_date"
+                >
+                  to:
+                </label>
+                <input
+                  class="border h-7 rounded-md focus:outline-none focus:border-blue-500"
+                  id="end_date"
+                  name="end_date"
+                  type="date"
+                />
+              </li>
+            </div>
+            <div
+              class="w-11/12 mx-auto flex flex-wrap content-center justify-center"
+            >
+              <button
+                class="w-full md:h-20 md:w-24 mt-4 md:mt-0 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
+                type="button"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="table-wrapper"
+        >
+          <table
+            class="applicationTable w-full"
+          >
+            <thead>
+              <tr
+                class="h-12 bg-gray-300"
+                id="table-header"
+              >
+                <th>
+                  FORM ID
+                </th>
+                <th>
+                  NAME
+                </th>
+                <th>
+                  AREA CODE
+                </th>
+                <th>
+                  STATUS
+                </th>
+                <th>
+                  DATE ISSUED
+                </th>
+                <th>
+                  CREATOR
+                </th>
+                <th>
+                  REVIEW
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="text-center h-12 font-semibold hover:bg-gray-300"
+              >
+                <td>
+                  1
+                </td>
+                <td>
+                  TestFirstName1 
+                  <br
+                    class=" sm:hidden"
+                  />
+                   TestLastName1
+                </td>
+                <td>
+                  TEST-01
+                </td>
+                <td>
+                  APPROVED
+                </td>
+                <td>
+                  2020-08-06
+                </td>
+                <td>
+                  TestAdmin
+                </td>
+                <td
+                  class="flex flex-wrap justify-center content-center"
+                >
+                  <button
+                    class="w-16 mt-2 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
+                    type="button"
+                  >
+                    Review
+                  </button>
+                </td>
+              </tr>
+              <tr
+                class="text-center h-12 font-semibold hover:bg-gray-300"
+              >
+                <td>
+                  2
+                </td>
+                <td>
+                  TestFirstName2 
+                  <br
+                    class=" sm:hidden"
+                  />
+                   TestLastName2
+                </td>
+                <td>
+                  TEST-02
+                </td>
+                <td>
+                  PROCESSING
+                </td>
+                <td>
+                  2020-08-06
+                </td>
+                <td>
+                  TestAdmin
+                </td>
+                <td
+                  class="flex flex-wrap justify-center content-center"
+                >
+                  <button
+                    class="w-16 mt-2 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
+                    type="button"
+                  >
+                    Review
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Application details Update Application details Update area_code, first_name, last_name then show table record view and in that view changes should reflect Rejected: Success-status-is-rejected-update 1`] = `
+<DocumentFragment>
+  <title
+    title="Applications"
+  >
+    Applications
+  </title>
+  <div
+    id="header-wrapper"
+  >
+    <div
+      class="w-screen sm:w-full h-20vh bg-green-500 flex flex-wrap content-center justify-center"
+    >
+      <h1
+        class="text-lg md:text-4xl"
+      >
+        REVIEW APPLICATION
+      </h1>
+    </div>
+  </div>
+  <div
+    class="h-80vh flex flex-col sm:flex-row"
+  >
+    <div
+      class="w-auto"
+      data-testid="navbar-wrapper"
+      id="navbar-wrapper"
+    >
+      <div
+        class="block h-full pb-8 sm:pb-0 sm:w-20vh bg-gray-300 sm:bg-gray-200 shadow-md sm:shadow-inner overflow-auto whitespace-normal"
+        data-testid="navbar"
+        id="navHide"
+      >
+        <div
+          class="w-3/12 sm:w-8/12 mt-8 mx-auto rounded-full overflow-auto"
+        >
+          <img
+            alt="logo"
+            src="logo.png"
+          />
+        </div>
+        <ul
+          class="text-center pt-8"
+        >
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              href="/home"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              aria-current="page"
+              class="active"
+              href="/application"
+              style="color: blue;"
+            >
+              Application
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              href="/customer"
+            >
+              Customer
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <a
+              href="/reports"
+            >
+              Reports
+            </a>
+          </li>
+          <li
+            class="py-1 hover:text-red-400"
+          >
+            <button
+              class="focus:outline-none"
+            >
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="fixed top-0 left-0 m-2"
+        id="button"
+      >
+        <button
+          class="focus:outline-none"
+          data-testid="nav-button"
+        >
+          <svg
+            height="24"
+            viewBox="0 0 24 24"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 22h-4v-4h4v4zm0-12h-4v4h4v-4zm0-8h-4v4h4v-4zm3 0v4h17v-4h-17zm0 12h17v-4h-17v4zm0 8h17v-4h-17v4z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="h-80vh w-full overflow-auto whitespace-normal bg-gray-200"
+      id="content-wrapper"
+    >
+      <div
+        id="content-wrapper"
+      >
+        <div
+          class="flex justify-end bg-gray-200"
+        >
+          <button
+            class="p-2 focus:outline-none hover:bg-gray-300"
+            data-testid="filter-button"
+          >
+            <svg
+              height="28"
+              viewBox="0 0 24 24"
+              width="34"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.151 17.943l-4.143-4.102-4.117 4.159-1.833-1.833 4.104-4.157-4.162-4.119 1.833-1.833 4.155 4.102 4.106-4.16 1.849 1.849-4.1 4.141 4.157 4.104-1.849 1.849z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="flex justify-center bg-gray-300 shadow-inner"
+        >
+          <div
+            class="w-11/12 pt-4 pb-6 md:w-auto md:h-40 md:pr-24 flex flex-col md:flex-row"
+          >
+            <div
+              class="px-3"
+            >
+              <li
+                class="flex flex-col"
+              >
+                <label
+                  for="first_name"
+                >
+                  First name:
+                </label>
+                <input
+                  class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                  data-testid="first_name"
+                  id="first_name"
+                  name="first_name"
+                  type="text"
+                />
+              </li>
+              <li
+                class="flex flex-col"
+              >
+                <label
+                  for="last_name"
+                >
+                  Last name:
+                </label>
+                <input
+                  class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                  data-testid="last_name"
+                  id="last_name"
+                  name="last_name"
+                  type="text"
+                />
+              </li>
+            </div>
+            <div
+              class="px-3"
+            >
+              <li
+                class="flex flex-col"
+              >
+                <label
+                  for="type_loan"
+                >
+                  Loan type:
+                </label>
+                <select
+                  class="w-40 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                  id="type_loan"
+                  name="type_loan"
+                  type="text"
+                >
+                  <option>
+                    ---
+                  </option>
+                  <option>
+                    NEW
+                  </option>
+                  <option>
+                    RENEW
+                  </option>
+                  <option>
+                    SP
+                  </option>
+                </select>
+              </li>
+              <li
+                class="flex flex-col"
+              >
+                <label
+                  for="status"
+                >
+                  Status:
+                </label>
+                <select
+                  class="w-40 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                  id="status"
+                  name="status"
+                  type="text"
+                >
+                  <option>
+                    ---
+                  </option>
+                  <option>
+                    PROCESSING
+                  </option>
+                  <option>
+                    APPROVED
+                  </option>
+                  <option>
+                    REJECTED
+                  </option>
+                  <option>
+                    ONGOING
+                  </option>
+                  <option>
+                    CLOSED
+                  </option>
+                </select>
+              </li>
+            </div>
+            <div
+              class="px-3"
+            >
+              <li
+                class="flex flex-col"
+              >
+                <label
+                  for="start_date"
+                >
+                  From:
+                </label>
+                <input
+                  class="border h-7 rounded-md focus:outline-none focus:border-blue-500"
+                  id="start_date"
+                  name="start_date"
+                  type="date"
+                />
+              </li>
+              <li
+                class="flex flex-col"
+              >
+                <label
+                  for="end_date"
+                >
+                  to:
+                </label>
+                <input
+                  class="border h-7 rounded-md focus:outline-none focus:border-blue-500"
+                  id="end_date"
+                  name="end_date"
+                  type="date"
+                />
+              </li>
+            </div>
+            <div
+              class="w-11/12 mx-auto flex flex-wrap content-center justify-center"
+            >
+              <button
+                class="w-full md:h-20 md:w-24 mt-4 md:mt-0 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
+                type="button"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="table-wrapper"
+        >
+          <table
+            class="applicationTable w-full"
+          >
+            <thead>
+              <tr
+                class="h-12 bg-gray-300"
+                id="table-header"
+              >
+                <th>
+                  FORM ID
+                </th>
+                <th>
+                  NAME
+                </th>
+                <th>
+                  AREA CODE
+                </th>
+                <th>
+                  STATUS
+                </th>
+                <th>
+                  DATE ISSUED
+                </th>
+                <th>
+                  CREATOR
+                </th>
+                <th>
+                  REVIEW
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="text-center h-12 font-semibold hover:bg-gray-300"
+              >
+                <td>
+                  1
+                </td>
+                <td>
+                  TestFirstName1 
+                  <br
+                    class=" sm:hidden"
+                  />
+                   TestLastName1
+                </td>
+                <td>
+                  TEST-01
+                </td>
+                <td>
+                  REJECTED
+                </td>
+                <td>
+                  2020-08-06
+                </td>
+                <td>
+                  TestAdmin
+                </td>
+                <td
+                  class="flex flex-wrap justify-center content-center"
+                >
+                  <button
+                    class="w-16 mt-2 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
+                    type="button"
+                  >
+                    Review
+                  </button>
+                </td>
+              </tr>
+              <tr
+                class="text-center h-12 font-semibold hover:bg-gray-300"
+              >
+                <td>
+                  2
+                </td>
+                <td>
+                  TestFirstName2 
+                  <br
+                    class=" sm:hidden"
+                  />
+                   TestLastName2
+                </td>
+                <td>
+                  TEST-02
+                </td>
+                <td>
+                  PROCESSING
+                </td>
+                <td>
+                  2020-08-06
+                </td>
+                <td>
+                  TestAdmin
+                </td>
+                <td
+                  class="flex flex-wrap justify-center content-center"
+                >
+                  <button
+                    class="w-16 mt-2 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
+                    type="button"
+                  >
+                    Review
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

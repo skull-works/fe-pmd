@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MonthsToPayInput Render Months/Weeks to pay: input and get snapShot: MonthsToPayInput 1`] = `
+<DocumentFragment>
+  <li
+    class="flex flex-col"
+  >
+    <label
+      for="mnths_to_pay"
+    >
+      Months/Weeks to pay:
+    </label>
+    <input
+      class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+      data-testid="mnths_to_pay"
+      id="mnths_to_pay"
+      name="mnths_to_pay"
+      type="text"
+    />
+  </li>
+</DocumentFragment>
+`;
+
+exports[`SpouseContent SpouseContent Component: SpouseInputs 1`] = `
+<DocumentFragment>
+  <div
+    id="spouse-wrapper"
+  >
+    <div
+      class="text-sm md:text-2xl"
+    >
+      <h1>
+        Spouse Information
+      </h1>
+    </div>
+    <div
+      class="mt-6 flex flex-col"
+    >
+      <div
+        class="flex flex-col md:flex-row"
+      >
+        <ul
+          class="mr-8 mt-2 md:mt-0"
+        >
+          <li
+            class="flex flex-col"
+          >
+            <label
+              for="Sfirst_name"
+            >
+              First Name:
+            </label>
+            <input
+              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              data-testid="Sfirst_name"
+              id="Sfirst_name"
+              name="Sfirst_name"
+              type="text"
+            />
+          </li>
+          <li
+            class="flex flex-col"
+          >
+            <label
+              for="Slast_name"
+            >
+              Last Name:
+            </label>
+            <input
+              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              data-testid="Slast_name"
+              id="Slast_name"
+              name="Slast_name"
+              type="text"
+            />
+          </li>
+          <li
+            class="flex flex-col"
+          >
+            <label
+              for="Sbirth_date"
+            >
+              Birth Date:
+            </label>
+            <input
+              class="border h-7 rounded-md focus:outline-none focus:border-blue-500"
+              id="Sbirth_date"
+              name="Sbirth_date"
+              type="date"
+            />
+          </li>
+          <li
+            class="flex flex-col"
+          >
+            <label
+              for="Scontact_no"
+            >
+              Contact Number:
+            </label>
+            <input
+              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              data-testid="Scontact_no"
+              id="Scontact_no"
+              name="Scontact_no"
+              type="text"
+            />
+          </li>
+        </ul>
+        <ul
+          class="mr-8 mt-2 md:mt-0"
+        >
+          <li
+            class="flex flex-col"
+          >
+            <label
+              for="Sstreet_address"
+            >
+              Street Address:
+            </label>
+            <input
+              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              data-testid="Sstreet_address"
+              id="Sstreet_address"
+              name="Sstreet_address"
+              type="text"
+            />
+          </li>
+          <li
+            class="flex flex-col"
+          >
+            <label
+              for="Sbarangay"
+            >
+              Barangay:
+            </label>
+            <input
+              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              data-testid="Sbarangay"
+              id="Sbarangay"
+              name="Sbarangay"
+              type="text"
+            />
+          </li>
+          <li
+            class="flex flex-col"
+          >
+            <label
+              for="Scity"
+            >
+              City:
+            </label>
+            <input
+              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              data-testid="Scity"
+              id="Scity"
+              name="Scity"
+              type="text"
+            />
+          </li>
+          <li
+            class="flex flex-col"
+          >
+            <label
+              for="Sprovince"
+            >
+              Province:
+            </label>
+            <input
+              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              data-testid="Sprovince"
+              id="Sprovince"
+              name="Sprovince"
+              type="text"
+            />
+          </li>
+        </ul>
+        <ul
+          class="mr-8 mt-2 md:mt-0"
+        >
+          <li
+            class="flex flex-col"
+          >
+            <label
+              for="Sreligion"
+            >
+              Religion:
+            </label>
+            <input
+              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              data-testid="Sreligion"
+              id="Sreligion"
+              name="Sreligion"
+              type="text"
+            />
+          </li>
+          <li
+            class="flex flex-col"
+          >
+            <label
+              for="Ssource_of_income"
+            >
+              Source of income:
+            </label>
+            <input
+              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              data-testid="Ssource_of_income"
+              id="Ssource_of_income"
+              name="Ssource_of_income"
+              type="text"
+            />
+          </li>
+          <li
+            class="flex flex-col"
+          >
+            <label
+              for="Snationality"
+            >
+              Nationality:
+            </label>
+            <input
+              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              data-testid="Snationality"
+              id="Snationality"
+              name="Snationality"
+              type="text"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

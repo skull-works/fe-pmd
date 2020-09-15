@@ -1,0 +1,87 @@
+.logoArea{
+    background-color: #b30c0c;
+}
+
+.logoArea__image{
+    position: relative; 
+    width:50%;
+}
+
+.form input{
+    width: 100%;
+}
+
+.form input[type=text], .form input[type=password]{
+    padding-left: 50px;
+}
+
+.form button{
+    width:100%;
+}
+
+@media(min-width: 400px){
+    .input__wrapper{
+        margin:auto;
+    }
+
+    .form input{
+        width: 40vh;
+    }
+
+    .form button{
+        width:40vh;
+    }
+}
+
+
+@media(min-width:500px ){
+    .logoArea__image{
+        width:40%;
+    }
+
+    .form input{
+        width: 50vh;
+    }
+
+    .form button{
+        width:50vh;
+    }
+}
+
+@media(min-width:600px ){
+    .logoArea__image{
+        width:30%;
+    }
+}
+
+@media(min-width:768px ){
+    .logoArea__image{
+        height:20vh;
+        width:74%;
+    }
+    
+    .form input{
+        width:40vh;
+    }
+
+    .form button{
+        width:40vh;
+    }
+}
+
+
+@media(min-width:1050px ){
+    .logoArea__image{
+        height:20vh;
+        width:60%;
+    }
+
+    .form input{
+        width:50vh;
+    }
+    
+    .form button{
+        width:50vh;
+    }
+}
+

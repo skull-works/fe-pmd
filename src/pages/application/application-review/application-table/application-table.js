@@ -3,11 +3,13 @@ import React from 'react';
 import ApplicationController from '../../../../controllers/application';
 //elements
 import Button from '../../../../elements/button';
+// css
+import '../styles.css';
 
-const ApplicationTable = ({tableData, setApplicationDetails}) => {
+const ApplicationTable = ({tableData, setApplicationDetails, csrf}) => {
     return (
         <div id="table-wrapper">
-                <table className="w-full">
+                <table className="applicationTable w-full">
                     <thead>
                         <tr id="table-header" className="h-12 bg-gray-300">
                             <th>FORM ID</th>
@@ -23,18 +25,22 @@ const ApplicationTable = ({tableData, setApplicationDetails}) => {
                         {tableData.map(i => (
                             <tr key={i.id} className="text-center h-12 font-semibold hover:bg-gray-300">
                                 <td>{i.id}</td>
-                                <td>{i.first_name} {i.last_name}</td>
+                                <td>{i.first_name} <br className=" sm:hidden" /> {i.last_name}</td>
                                 <td>{i.area_code}</td>
                                 <td>{i.status}</td>
                                 <td>{i.date_issued.split('T')[0]}</td>
                                 <td>{i.created_by}</td>
-                                <td><Button label="Review" callback={ApplicationController.getApplicationDetail} parameters={{area_code: i.area_code, formId:i.id, setApplicationDetails:setApplicationDetails}} /></td>
+                                <td className="flex flex-wrap justify-center content-center"><Button label="Review" 
+                                            position="w-16 mt-2"
+                                            callback={ApplicationController.getApplicationDetail} 
+                                            args={[i.area_code, i.id, setApplicationDetails, csrf]} />
+                                </td>
                             </tr>   
                         ))}
                     </tbody>
                 </table>
             </div>
-            )
+        )
 }
 
 export default ApplicationTable;

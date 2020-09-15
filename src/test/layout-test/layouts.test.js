@@ -37,7 +37,6 @@ describe("Navbar layout", () => {
         );
         //navbar is hidden
         getByTestId("navbar-wrapper");
-        expect(getByTestId("navbar").className).toContain("hidden");
         //click button to render navbar
         fireEvent.click(getByTestId("nav-button"));
         //show navbar

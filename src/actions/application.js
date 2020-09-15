@@ -14,18 +14,17 @@ import Input from '../elements/input';
 
 
 
-
 const ApplicationActions = {
     HeaderText: (location, setText) => {
         switch (location) {
             case "CreateApplication":
-                setText("CREATE APPLICATION")
+                setText("CREATE APPLICATION");
                 break;
             case "ReviewApplications":
-                setText("REVIEW APPLICATION")
+                setText("REVIEW APPLICATION");
                 break;
             default:
-                setText("APPLICATIONS")
+                setText("APPLICATIONS");
         }
     },
     ContentComponent: ({location}) => {
@@ -38,12 +37,12 @@ const ApplicationActions = {
                 return(<MainApplication />)
         }
     },
-    TypeApplication: ({typeloan}) => {
+    TypeApplication: ({ typeloan, csrf }) => {
         switch (typeloan){
             case "New":
-                return(<ApplicationNew />)
+                return(<ApplicationNew csrf={csrf}/>)
             case "Renew":
-                return(<ApplicationRenew />)
+                return(<ApplicationRenew csrf={csrf} />)
             default:
                 return(<h1 className="text-center text-md md:text-2xl pt-8">Choose The Type of Application First</h1>)
         }
@@ -54,42 +53,15 @@ const ApplicationActions = {
         console.log(inputs);
         setInputs(inputs);
     },
-    InputChange: (input, {inputs, setInputs, setMarried, setDaily}) => {
-        console.log(inputs);
-        //inputUpdate
-        if(input.value === '---' || input.value === '')
-            delete inputs[input.name];
-        else{
-            inputs[input.name] = input.value;
-            setInputs(inputs);
-        }
-
-        //validation
-        if(setMarried){
-            if(inputs.civil_status === 'M' || inputs.civil_status ==='m' )
-                setMarried(true);
-            else
-                setMarried(false);
-        }
-        if(input.name === "pay_type"){
-            if(inputs.pay_type === 'WEEKLY' || inputs.pay_type === 'MONTHLY'){
-                setDaily(false);
-            }
-            else{
-                setDaily(true);
-            }
-        }
-    },
     SpouseContent: ({store}) => {
         if(store.isMarried)
-            return <SpouseInputs InputChange={ApplicationActions.InputChange} store={store}/>;
-        return null
+            return <SpouseInputs store={store}/>;
+        return <h1>No spouse</h1>
     },
     MonthsToPayInput: ({store}) => {
-        if(store.isDaily === false){
-            return <Input  label="Months/Weeks to pay:"     name="mnths_to_pay"  callback={ApplicationActions.InputChange} parameters={store}/>;
-        }
-        return null;
+        if(store.isDaily === false)
+            return (<Input  label="Months/Weeks to pay:" name="mnths_to_pay" store={store}/>);
+        return (null);
     },
     SetStateNull: (callback) => {
         callback(null);

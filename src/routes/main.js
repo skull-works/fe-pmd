@@ -1,12 +1,8 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 //pages
-import Home from '../pages/home';
-import Application from '../pages/application/application';
 import Login from '../pages/login/login';
-//layouts
-import Header from '../layout/header/header';
-
+import ProtectedRoutes from './protectedRoutes';
 
 const Routes = () => {
     return (
@@ -14,11 +10,15 @@ const Routes = () => {
              <Route exact path="/"  >
                  <Login />
              </Route>
-             <Route path="/home">
-                 <Header text="PMD PORTAL" title="PMD PORTAL" />
-                 <Home />
+
+             <ProtectedRoutes />
+
+             <Route path="*">
+                 <div className="mx-auto pt-30vh">
+                    <h1 className="text-5xl"> 404 Page not found :-(</h1>
+                    <p>click link to go back to <Link to="/" className="text-blue-600 underline">Default Page</Link></p>
+                 </div>
              </Route>
-             <Route path="/application" component={Application} />
         </Switch>
     )
 }

@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 //actions
 import ApplicationActions from '../../../actions/application';
-
+import { IsUserStillLoggedIn } from '../../mainHooks/AuthHooks';
 
 const CreateApplication = () => {
     const [type, setType] = useState(null);
-    useEffect(() => {
-        setType(type);
-    }, [type])
-
+    let { csrf } = IsUserStillLoggedIn();
     return(
         <>
             <div className="w-9/12 flex flex-col md:flex-row justify-around mx-auto">
@@ -22,7 +19,7 @@ const CreateApplication = () => {
                 </button>
             </div>
             <div className="w-9/12 mt-12 flex flex-col md:flex-row justify-around  mx-auto">
-                <ApplicationActions.TypeApplication typeloan={type} />
+                <ApplicationActions.TypeApplication typeloan={type}  csrf={csrf} />
             </div>
        </> 
     )

@@ -4,8 +4,21 @@
     animation-duration: 0.7s;
 }
 
+#navHide{
+    transition: 0.5s ease;
+    animation-duration: 0.7s;
+    margin-left: -20vh;
+}
+
+
+@media(max-width: 640px){
+    #navHide{
+        display:none;
+    }
+}
 
 @keyframes show{
     from {margin-left: -20vh;}
     to {margin-left: 0;}
 }
+
