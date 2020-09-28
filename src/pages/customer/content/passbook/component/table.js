@@ -11,7 +11,10 @@ import { Hooks } from '../hooks';
 const PassbookItems = ({tableData, details, csrf}) => {
     const store = Hooks();
     const { InputChange } = GeneralAction;
-    if(details) store.inputs.passbookId = details.passbook.id;
+    if(details) {
+        store.inputs.applicationId = details.id;
+        store.inputs.passbookId = details.passbook.id;
+    }
     if(tableData.length > 0) store.inputs.balance = tableData[tableData.length-1].balance;
     else if(details)  store.inputs.balance = details.total;
 

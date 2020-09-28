@@ -8,9 +8,9 @@ import { useLocation } from 'react-router-dom';
 
 const Customer = () => {
     const [text, setText] = React.useState('CUSTOMER');
-    let { ContentComponent, HeaderText } = CustomerActions;
-    let location = useLocation();
-    let query = location.search.split("=")[1];
+    var { ContentComponent, HeaderText } = CustomerActions;
+    var location = useLocation();
+    var query = location.search.split("=")[1];
 
     useEffect(() => {
         HeaderText(query, setText);

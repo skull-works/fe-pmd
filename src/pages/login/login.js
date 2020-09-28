@@ -16,6 +16,7 @@ const Login = () => {
 
     return(
         <>
+            <title>PMD LOGIN</title>
             <div className="flex flex-col md:flex-row">
                 <div className="logoArea w-full md:w-6/12 h-30vh sm:h-30vh md:h-50vh lg:h-70vh md:rounded-br-full  overflow-hidden">
                     <div className="logoArea__image  mx-auto md:ml-8 lg:ml-16">

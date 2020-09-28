@@ -11,7 +11,7 @@ exports[`MonthsToPayInput Render Months/Weeks to pay: input and get snapShot: Mo
       Months/Weeks to pay:
     </label>
     <input
-      class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+      class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
       data-testid="mnths_to_pay"
       id="mnths_to_pay"
       name="mnths_to_pay"
@@ -51,7 +51,7 @@ exports[`SpouseContent SpouseContent Component: SpouseInputs 1`] = `
               First Name:
             </label>
             <input
-              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
               data-testid="Sfirst_name"
               id="Sfirst_name"
               name="Sfirst_name"
@@ -67,7 +67,7 @@ exports[`SpouseContent SpouseContent Component: SpouseInputs 1`] = `
               Last Name:
             </label>
             <input
-              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
               data-testid="Slast_name"
               id="Slast_name"
               name="Slast_name"
@@ -98,7 +98,7 @@ exports[`SpouseContent SpouseContent Component: SpouseInputs 1`] = `
               Contact Number:
             </label>
             <input
-              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
               data-testid="Scontact_no"
               id="Scontact_no"
               name="Scontact_no"
@@ -118,7 +118,7 @@ exports[`SpouseContent SpouseContent Component: SpouseInputs 1`] = `
               Street Address:
             </label>
             <input
-              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
               data-testid="Sstreet_address"
               id="Sstreet_address"
               name="Sstreet_address"
@@ -134,7 +134,7 @@ exports[`SpouseContent SpouseContent Component: SpouseInputs 1`] = `
               Barangay:
             </label>
             <input
-              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
               data-testid="Sbarangay"
               id="Sbarangay"
               name="Sbarangay"
@@ -150,7 +150,7 @@ exports[`SpouseContent SpouseContent Component: SpouseInputs 1`] = `
               City:
             </label>
             <input
-              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
               data-testid="Scity"
               id="Scity"
               name="Scity"
@@ -166,7 +166,7 @@ exports[`SpouseContent SpouseContent Component: SpouseInputs 1`] = `
               Province:
             </label>
             <input
-              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
               data-testid="Sprovince"
               id="Sprovince"
               name="Sprovince"
@@ -186,7 +186,7 @@ exports[`SpouseContent SpouseContent Component: SpouseInputs 1`] = `
               Religion:
             </label>
             <input
-              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
               data-testid="Sreligion"
               id="Sreligion"
               name="Sreligion"
@@ -202,7 +202,7 @@ exports[`SpouseContent SpouseContent Component: SpouseInputs 1`] = `
               Source of income:
             </label>
             <input
-              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
               data-testid="Ssource_of_income"
               id="Ssource_of_income"
               name="Ssource_of_income"
@@ -218,7 +218,7 @@ exports[`SpouseContent SpouseContent Component: SpouseInputs 1`] = `
               Nationality:
             </label>
             <input
-              class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+              class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
               data-testid="Snationality"
               id="Snationality"
               name="Snationality"

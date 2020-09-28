@@ -57,11 +57,11 @@ describe('Application details', () => {
         describe('Update area_code, first_name, last_name then show table record view and in that view changes should reflect', () => {
             it('Area code', async () => {
                 //setup
-                const { getByText, getByTestId, spyApiUpdate } = await setup();
+                const { getByText, getAllByTestId, spyApiUpdate } = await setup();
                 //Act Update a field
                 mockFetch(updateApplicationFetchResolveSuccess);
                 fireEvent.click(getByText('TEST-01'));                                                      // press area code field to show input for update
-                fireEvent.change(getByTestId('area_code'), { target: { value: 'TEST-04' }});                // input new value
+                fireEvent.change(getAllByTestId('area_code')[1], { target: { value: 'TEST-04' }});          // input new value
                 await perform(fireEvent.click,[getByText("Update")], true);                                 // press update
                 //assertions
                 getByText('TEST-04');                                                                       //table record 1

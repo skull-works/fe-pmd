@@ -71,6 +71,7 @@ describe('New form', () => {
         fireEvent.click(getByText('New'));
         loopInputs(arrNewLabel, arrNewValue, arrNewField, getByLabelText, spy);                     //InputChange function
         perform(fireEvent.click, [getByText("Create Application")]);                                //call controller AddAplication
+        perform(fireEvent.click, [getByText("Yes")]);
 
         //assertions
         expect(spy).toHaveBeenCalledTimes(arrNewLabel.length);
@@ -143,6 +144,7 @@ describe('Renew/Special form', () => {
         fireEvent.click(getByText('Renew/Special'));
         loopInputs(arrRenewLabel, arrRenewValue, arrRenewField, getByLabelText, spy)
         perform(fireEvent.click,[getByText("Create Application")]);
+        perform(fireEvent.click,[getByText("Yes")]);
        
         //assertion
         expect(spy).toHaveBeenCalledTimes(arrRenewLabel.length);

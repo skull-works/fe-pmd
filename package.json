@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "dotenv": "^8.2.0",
     "express-favicon": "^2.0.1",
     "http-proxy-middleware": "^1.0.5",
     "react": "^16.13.1",
@@ -23,8 +24,10 @@
     "test": "react-scripts test --unhandled-rejections=strict",
     "eject": "react-scripts eject",
     "build-css": "tailwindcss build src/tailwindcss/styles.css -o public/styles.css",
-    "docker-build": "docker build . -t mabutalid1/pmdfrontend:latest",
-    "api": " docker run --env HOST=host.docker.internal --env DBNAME=pmd-dev --env USER=marcoadmin0 --env PASS=marcopass0 --rm -p 9000:9000 mabutalid1/pmdapi:latest"
+    "docker-build": "docker build . -t mabutalid1/pmdfrontend:latest && docker push mabutalid1/pmdfrontend:latest",
+    "up": "docker run --name my-frontend --env HOST=http://host.docker.internal --rm -it -p 3000:3000/tcp -d mabutalid1/pmdfrontend:latest",
+    "api": "docker run --name my-pmdapi --env JWTSECRET=devSecret --env HOST=host.docker.internal --env REDISPORT=6379 --env DBNAME=pmd-dev --env USER=marcoadmin0 --env PASS=marcopass0 --rm -p 9000:9000 -d mabutalid1/pmdapi:latest",
+    "up-redis": "docker run --rm --name my-redis -p 6379:6379/tcp -d redis:latest"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,8 +44,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2"
-  }
+  "devDependencies": {}
 }

@@ -165,7 +165,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Area Code:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="area_code"
                     id="area_code"
                     name="area_code"
@@ -181,7 +181,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     First Name:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="first_name"
                     id="first_name"
                     name="first_name"
@@ -197,7 +197,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Last Name:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="last_name"
                     id="last_name"
                     name="last_name"
@@ -228,7 +228,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Age:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="age"
                     id="age"
                     name="age"
@@ -248,7 +248,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Contact Number:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="contact_no"
                     id="contact_no"
                     name="contact_no"
@@ -264,7 +264,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Street Address:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="street_address"
                     id="street_address"
                     name="street_address"
@@ -280,7 +280,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Barangay:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="barangay"
                     id="barangay"
                     name="barangay"
@@ -296,7 +296,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     City:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="city"
                     id="city"
                     name="city"
@@ -312,7 +312,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Province:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="province"
                     id="province"
                     name="province"
@@ -332,7 +332,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Religion:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="religion"
                     id="religion"
                     name="religion"
@@ -348,7 +348,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Nationality:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="nationality"
                     id="nationality"
                     name="nationality"
@@ -364,7 +364,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Source of Income:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="source_of_income"
                     id="source_of_income"
                     name="source_of_income"
@@ -380,7 +380,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Length of Service:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="length_of_service"
                     id="length_of_service"
                     name="length_of_service"
@@ -396,7 +396,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Length of Stay:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="length_of_stay"
                     id="length_of_stay"
                     name="length_of_stay"
@@ -416,7 +416,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Occupation:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="occupation"
                     id="occupation"
                     name="occupation"
@@ -457,7 +457,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Days to pay:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="days_to_pay"
                     id="days_to_pay"
                     name="days_to_pay"
@@ -473,7 +473,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Loan amount:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="amount_loan"
                     id="amount_loan"
                     name="amount_loan"
@@ -521,7 +521,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Pay breakdown:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="pay_breakdown"
                     id="pay_breakdown"
                     name="pay_breakdown"
@@ -537,7 +537,7 @@ exports[`Rendering Click button New then render form application new: New-applic
                     Processing Fee:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="proc_fee"
                     id="proc_fee"
                     name="proc_fee"
@@ -746,7 +746,7 @@ exports[`Rendering Click button Renew/Special then render form application Renew
                     Area Code:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="area_code"
                     id="area_code"
                     name="area_code"
@@ -762,7 +762,7 @@ exports[`Rendering Click button Renew/Special then render form application Renew
                     First Name:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="first_name"
                     id="first_name"
                     name="first_name"
@@ -778,7 +778,7 @@ exports[`Rendering Click button Renew/Special then render form application Renew
                     Last Name:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="last_name"
                     id="last_name"
                     name="last_name"
@@ -823,7 +823,7 @@ exports[`Rendering Click button Renew/Special then render form application Renew
                     Days to pay:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="days_to_pay"
                     id="days_to_pay"
                     name="days_to_pay"
@@ -839,7 +839,7 @@ exports[`Rendering Click button Renew/Special then render form application Renew
                     Loan amount:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="amount_loan"
                     id="amount_loan"
                     name="amount_loan"
@@ -883,7 +883,7 @@ exports[`Rendering Click button Renew/Special then render form application Renew
                     Pay breakdown:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="pay_breakdown"
                     id="pay_breakdown"
                     name="pay_breakdown"
@@ -903,7 +903,7 @@ exports[`Rendering Click button Renew/Special then render form application Renew
                     Processing Fee:
                   </label>
                   <input
-                    class=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                    class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
                     data-testid="proc_fee"
                     id="proc_fee"
                     name="proc_fee"

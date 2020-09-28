@@ -69,7 +69,7 @@ exports.getPassbookItems = {
     "passbook": {
         "id": 2,
         "createdAt": "2020-08-31",
-        "passbookItems": [
+        "passbookitems": [
             {
                 "id": 1,
                 "dates_paid": "2020-08-30",
@@ -109,7 +109,7 @@ exports.getPassbookItemsNoItems = {
     "passbook": {
         "id": 2,
         "createdAt": "2020-08-31",
-        "passbookItems": []
+        "passbookitems": []
     }
 }
 

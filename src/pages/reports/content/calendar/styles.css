@@ -1,0 +1,16 @@
+@media (max-width: 768px){
+    .calendarTable{
+        font-size: 1.5vw;
+    }
+}
+
+
+@media (max-width: 640px){
+    .calendarTable{
+        font-size: 1.9vw;
+    }
+}
+
+.calendarTable tr:nth-child(even) {
+    background-color:#cbd5e0;
+}

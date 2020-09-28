@@ -32,8 +32,7 @@ const PassbookController = {
         let formId = inputs.formId;
         return fetch(`/passbook-item/${formId}`, {
             method: 'GET',
-            headers: {'Content-Type': 'application/json',
-                      'X-CSRF-TOKEN': csrf}
+            headers: {'Content-Type': 'application/json', 'X-CSRF-TOKEN': csrf}
         })
         .then(res => res.json())
         .then(data => {
@@ -43,7 +42,7 @@ const PassbookController = {
                 setCustomerInfo(null);
             }
             else if(data.passbook) {
-                setTableData(data.passbook.passbookItems);
+                setTableData(data.passbook.passbookitems);
                 setCustomerInfo(data);
             }
             else throw new Error(data);

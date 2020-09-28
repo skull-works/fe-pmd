@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 //controllers
 import ApplicationController from '../../../../controllers/application';
 //elements
@@ -9,9 +10,11 @@ import Date from '../../../../elements/date';
 import ApplicationActions from '../../../../actions/application';
 import GeneralActions from '../../../../actions/general';
 import { Hooks } from './hooks';
+import Dialog from '../../../../elements/dialog';
 
 const ApplicationNew = ({csrf}) => {
     const store = Hooks();
+    let history = useHistory();
     const { SpouseContent, MonthsToPayInput } = ApplicationActions;
     const { InputChange } = GeneralActions;
     return (
@@ -67,7 +70,10 @@ const ApplicationNew = ({csrf}) => {
 
             <div className="pb-12 mt-4">
                 <button type="button" className="w-40 mt-4 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
-                        onClick={() => ApplicationController.AddApplication(store.inputs, csrf)} >
+                        onClick={() => Dialog.confirm(ApplicationController.AddApplication,
+                                                      [store.inputs, csrf, history],
+                                                      'Creating Application!',
+                                                      'Are you sure you want to create Application?')} >
                     Create Application
                 </button>
             </div>

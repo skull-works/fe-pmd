@@ -11,11 +11,10 @@ const Input = ({label, name, store}) => {
                         data-testid={name}
                         name={name} type="text"
                         onChange={e => InputChange(name, e.target.value, store)} 
-                        className=" w-full md:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"/>
+                        className=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"/>
             </li>
     )
 }
-
 
 
 export default Input;

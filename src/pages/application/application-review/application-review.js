@@ -33,7 +33,10 @@ const ApplicationReview = () => {
             </div>
             {/* inputs */}
             <div className={store.filterShow?"flex justify-center bg-gray-300 shadow-inner":"hidden"}>
-                <div className="w-11/12 pt-4 pb-6 md:w-auto md:h-40 md:pr-24 flex flex-col md:flex-row">
+                <div className="w-11/12 pt-4 pb-6 md:w-11/12 lg:w-auto md:h-40 md:pr-24 flex flex-col md:flex-row">
+                    <div className="px-3">
+                        <Input label="Area code:" name="area_code"  store={store}/>
+                    </div>
                     <div className="px-3">
                         <Input label="First name:" name="first_name"  store={store}/>
                         <Input label="Last name:"  name="last_name"   store={store}/>
@@ -41,6 +44,8 @@ const ApplicationReview = () => {
                     <div className="px-3">
                         <Select label="Loan type:" name="type_loan"   store={store} options={['NEW', 'RENEW', 'SP']}/>
                         <Select label="Status:"    name="status"      store={store} options={['PROCESSING','APPROVED', 'REJECTED','ONGOING','CLOSED']} />
+                        {store.tableData.length === 0 ? null : 
+                            <h2 className="py-4 w-48 font-semibold font-Nunito hidden md:block">ROWS FETCHED: <span className="text-blue-500">{store.tableData.length}</span></h2> }
                     </div>
                     <div className="px-3">
                         <Date label="From:"        name="start_date"  store={store}/>
@@ -50,8 +55,11 @@ const ApplicationReview = () => {
                         <Button label="Search" 
                                 position="w-full md:h-20 md:w-24 mt-4 md:mt-0"
                                 callback={ApplicationController.getApplications} 
-                                args={[store.inputs, store.setTableData, csrf]} />
+                                args={[store.inputs, store.setTableData, csrf]} /> <br /> <br />
+                                {store.tableData.length === 0 ? null : 
+                            <h2 className="py-4 font-semibold font-Nunito md:hidden">ROWS FETCHED: <span className="text-blue-500">{store.tableData.length}</span></h2> }
                     </div>
+
                 </div>
             </div>
             {/* content */}

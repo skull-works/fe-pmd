@@ -4,7 +4,7 @@ import { changeManyValue } from './operations';
 
 toast.configure();
 const ApplicationController = {
-    AddApplication: async (inputs, csrf) => {
+    AddApplication: async (inputs, csrf, history) => {
         return fetch('/application_form', {
             method: 'POST',
             headers: {'Content-Type': 'application/json',
@@ -15,8 +15,12 @@ const ApplicationController = {
             return res.json();
         })
         .then(data => {
-            if(data.subject === "success")
-                toast.success(data.message, {autoClose: 5000});
+            if(data.subject === "success"){
+                 toast.success(data.message, {autoClose: 5000});
+                 history.push({pathname: "/application?q=CreateApplication"});
+                 history.goBack();
+            }
+               
             else if(data.error){
                 if(data.error.field && data.error.message)
                     toast.error(`${data.error.field} ${data.error.message}`,{autoClose: 20000});
@@ -32,6 +36,7 @@ const ApplicationController = {
     },
     getApplications: (inputs, setTableData, csrf) => {
         let query = JSON.stringify({
+            area_code: inputs.area_code,
             first_name: inputs.first_name,
             last_name: inputs.last_name,
             type_loan: inputs.type_loan,

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 //elements
 import Input from '../../../../elements/input';
 import Select from '../../../../elements/select';
@@ -8,9 +9,11 @@ import ApplicationController from '../../../../controllers/application';
 import ApplicationActions from '../../../../actions/application';
 import GeneralActions from '../../../../actions/general';
 import { Hooks } from './hooks';
+import Dialog from '../../../../elements/dialog';
 
 const ApplicationRenew = ({ csrf }) => {
     const store = Hooks();
+    let history = useHistory();
     const { MonthsToPayInput } = ApplicationActions;
     const { InputChange } = GeneralActions;
 
@@ -47,7 +50,10 @@ const ApplicationRenew = ({ csrf }) => {
                 <div>
                     <button type="button" 
                             className="w-40 mt-4 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
-                            onClick={() => ApplicationController.AddApplication(store.inputs, csrf)} >
+                            onClick={() => Dialog.confirm(ApplicationController.AddApplication, 
+                                                          [store.inputs, csrf, history],
+                                                          'Creating Application!',
+                                                          'Are you sure you want to create Application?')}>
                         Create Application
                     </button>
                 </div>

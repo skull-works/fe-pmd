@@ -117,7 +117,7 @@ describe('Passbook Component', () => {
 
             expect(spyDialog).toHaveBeenCalledTimes(1);
             expect(spyPostPassbookItem).toHaveBeenCalledTimes(1);
-            expect(spyPostPassbookItem).toHaveBeenCalledWith({"balance": 2800, "collection": "100", "passbookId": 2}, undefined); //undefined here is csrf which is not necessary in test
+            expect(spyPostPassbookItem).toHaveBeenCalledWith({applicationId: 4, "balance": 2800, "collection": "100", "passbookId": 2}, undefined); //undefined here is csrf which is not necessary in test
         });
     }); 
 });
