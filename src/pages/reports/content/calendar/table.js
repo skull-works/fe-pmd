@@ -27,8 +27,13 @@ const CalendarItems = ({dates, customerPayments}) => {
                                             {customer.passbook ? 
                                                     dates.map(date => {
                                                         let customerItem = customer.passbook.passbookitems[i];
+                                                        let nextItem = customer.passbook.passbookitems[i+1];
                                                         if(customerItem && (customerItem.dates_paid === date)){
-                                                            i++;
+                                                            if(nextItem && customerItem.dates_paid === nextItem.dates_paid){
+                                                                customerItem.collection += nextItem.collection
+                                                                i+=2;
+                                                            }else
+                                                                i++;
                                                             return(<td key={customerItem.id} className="text-center">P{customerItem.collection}</td>)
                                                         }
                                                         return(<td key={date} className="text-center">N</td>)
