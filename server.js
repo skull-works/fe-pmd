@@ -21,6 +21,7 @@ app.use('/application_form',  createProxyMiddleware({ target: proxyHost }));
 app.use('/application_form-details',  createProxyMiddleware({ target: proxyHost }));
 app.use('/passbook',  createProxyMiddleware({ target: proxyHost }));
 app.use('/passbook-item',  createProxyMiddleware({ target: proxyHost }));
+app.use('/calendarReport', createProxyMiddleware({ target: proxyHost }));
 
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'build')));

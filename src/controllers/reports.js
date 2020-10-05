@@ -11,11 +11,11 @@ const ReportsController = {
                 headers: {'Content-Type': 'application/json', 'X-CSRF-TOKEN': csrf}
             }).then(res => res.json()).catch(err => err);
             if( data.allDates && data.customerPayments ){
+                console.log(data);
                 setDates(data.allDates);
                 setCustomerPayments(data.customerPayments);
-            }else{
+            }else
                 toast.error( (data.error && data.error.message) || 'Something went wrong, contact system administrator', { autoClose: 5000 });
-            }
         }catch(err){
             console.log(err);
             toast.error('Something went wrong, contact system administrator', { autoClose: 5000 });
