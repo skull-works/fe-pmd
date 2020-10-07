@@ -1,7 +1,5 @@
 import React from 'react';
-import { fireEvent } from '@testing-library/react';
 import { renderComp } from '../../test-util';
-import Customer from '../../../pages/customer/customer';
 import Reports from '../../../pages/reports/reports';
 
 jest.mock('../../../pages/customer/content/passbook/passbook', () => () => <h1>Customer Passbook View</h1>);

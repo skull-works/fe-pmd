@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import { renderHook, perform } from '../test-util';
-import CustomerActions from '../../actions/customer';
 import ReportsActions from '../../actions/reports';
 
 jest.mock('../../pages/reports/content/main/main', () => () => <h1>Reports Default View</h1>);
