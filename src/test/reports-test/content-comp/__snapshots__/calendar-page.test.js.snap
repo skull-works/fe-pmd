@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calendar Report Page Default view 1`] = `
+<DocumentFragment>
+  <div
+    id="content-wrapper"
+  >
+    <div
+      class="flex justify-end bg-gray-200"
+    >
+      <button
+        class="p-2 focus:outline-none hover:bg-gray-300"
+        data-testid="showInputs-button"
+      >
+        <svg
+          height="28"
+          viewBox="0 0 24 24"
+          width="34"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 12c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm-18.005-1.568l1.415-1.414 4.59 4.574 4.579-4.574 1.416 1.414-5.995 5.988-6.005-5.988z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="hidden"
+    >
+      <div
+        class="w-full pt-4 pb-6 md:w-auto md:h-40 md:pr-24 flex flex-col md:flex-row mx-auto"
+      >
+        <div
+          class="px-3 flex flex-col md:flex-row"
+        >
+          <div>
+            <li
+              class="flex flex-col"
+            >
+              <label
+                for="area_code"
+              >
+                Area Code:
+              </label>
+              <input
+                class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                data-testid="area_code"
+                id="area_code"
+                name="area_code"
+                type="text"
+              />
+            </li>
+          </div>
+          <div
+            class="md:ml-4"
+          >
+            <li
+              class="flex flex-col"
+            >
+              <label
+                for="start_date"
+              >
+                From:
+              </label>
+              <input
+                class="border h-7 rounded-md focus:outline-none focus:border-blue-500"
+                id="start_date"
+                name="start_date"
+                type="date"
+              />
+            </li>
+            <li
+              class="flex flex-col"
+            >
+              <label
+                for="end_date"
+              >
+                To:
+              </label>
+              <input
+                class="border h-7 rounded-md focus:outline-none focus:border-blue-500"
+                id="end_date"
+                name="end_date"
+                type="date"
+              />
+            </li>
+          </div>
+        </div>
+        <div
+          class="w-11/12 mx-auto flex flex-wrap content-center justify-center"
+        >
+          <button
+            class="w-full md:h-20 md:w-24 mt-4 md:mt-0 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
+            type="button"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      id="table-wrapper"
+    >
+      <table
+        class="calendarTable w-full"
+        data-testid="passbookItems"
+      >
+        <thead>
+          <tr
+            class="h-12 bg-gray-300"
+            id="table-header"
+          >
+            <th>
+              NAME
+            </th>
+          </tr>
+        </thead>
+        <tbody />
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Calendar Report Page With Payments View 1`] = `
+<DocumentFragment>
+  <div
+    id="content-wrapper"
+  >
+    <div
+      class="flex justify-end bg-gray-200"
+    >
+      <button
+        class="p-2 focus:outline-none hover:bg-gray-300"
+        data-testid="showInputs-button"
+      >
+        <svg
+          height="28"
+          viewBox="0 0 24 24"
+          width="34"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 12c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm-18.005-1.568l1.415-1.414 4.59 4.574 4.579-4.574 1.416 1.414-5.995 5.988-6.005-5.988z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="hidden"
+    >
+      <div
+        class="w-full pt-4 pb-6 md:w-auto md:h-40 md:pr-24 flex flex-col md:flex-row mx-auto"
+      >
+        <div
+          class="px-3 flex flex-col md:flex-row"
+        >
+          <div>
+            <li
+              class="flex flex-col"
+            >
+              <label
+                for="area_code"
+              >
+                Area Code:
+              </label>
+              <input
+                class=" w-full md:w-24 lg:w-40 h-7 rounded-md shadow-inner border focus:border-blue-400 focus:outline-none"
+                data-testid="area_code"
+                id="area_code"
+                name="area_code"
+                type="text"
+              />
+            </li>
+          </div>
+          <div
+            class="md:ml-4"
+          >
+            <li
+              class="flex flex-col"
+            >
+              <label
+                for="start_date"
+              >
+                From:
+              </label>
+              <input
+                class="border h-7 rounded-md focus:outline-none focus:border-blue-500"
+                id="start_date"
+                name="start_date"
+                type="date"
+              />
+            </li>
+            <li
+              class="flex flex-col"
+            >
+              <label
+                for="end_date"
+              >
+                To:
+              </label>
+              <input
+                class="border h-7 rounded-md focus:outline-none focus:border-blue-500"
+                id="end_date"
+                name="end_date"
+                type="date"
+              />
+            </li>
+          </div>
+        </div>
+        <div
+          class="w-11/12 mx-auto flex flex-wrap content-center justify-center"
+        >
+          <button
+            class="w-full md:h-20 md:w-24 mt-4 md:mt-0 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
+            type="button"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      id="table-wrapper"
+    >
+      <table
+        class="calendarTable w-full"
+        data-testid="passbookItems"
+      >
+        <thead>
+          <tr
+            class="h-12 bg-gray-300"
+            id="table-header"
+          >
+            <th>
+              NAME
+            </th>
+            <th>
+              2020-09-20
+            </th>
+            <th>
+              2020-09-21
+            </th>
+            <th>
+              2020-09-22
+            </th>
+            <th>
+              2020-09-23
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              class="text-center"
+            >
+              TestFname1 
+              <br />
+               TestLname1 
+              <br />
+               09990371921
+            </td>
+            <td
+              class="text-center"
+            >
+              N
+            </td>
+            <td
+              class="text-center"
+            >
+              N
+            </td>
+            <td
+              class="text-center"
+            >
+              P3500
+            </td>
+            <td
+              class="text-center"
+            >
+              N
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="text-center"
+            >
+              TestFname2 
+              <br />
+               TestLname2 
+              <br />
+               09990371921
+            </td>
+            <td
+              class="text-center"
+            >
+              N
+            </td>
+            <td
+              class="text-center"
+            >
+              N
+            </td>
+            <td
+              class="text-center"
+            >
+              P3500
+            </td>
+            <td
+              class="text-center"
+            >
+              N
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="text-center"
+            >
+              TestFname3 
+              <br />
+               TestLname3 
+              <br />
+               09990371222
+            </td>
+            <td
+              class="text-center"
+            >
+              N
+            </td>
+            <td
+              class="text-center"
+            >
+              N
+            </td>
+            <td
+              class="text-center"
+            >
+              P3500
+            </td>
+            <td
+              class="text-center"
+            >
+              N
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;

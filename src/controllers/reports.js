@@ -11,7 +11,6 @@ const ReportsController = {
                 headers: {'Content-Type': 'application/json', 'X-CSRF-TOKEN': csrf}
             }).then(res => res.json()).catch(err => err);
             if( data.allDates && data.customerPayments ){
-                console.log(data);
                 setDates(data.allDates);
                 setCustomerPayments(data.customerPayments);
             }else
