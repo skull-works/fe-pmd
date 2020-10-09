@@ -28,7 +28,7 @@ const PassbookController = {
             toast.error('Failed to create passbook, Something went wrong', {autoClose: 5000});       
         })
     },
-    getPassbookItems: async (inputs, setTableData, setCustomerInfo, csrf) => {
+    getPassbookItems: async (inputs, setTableData, setCustomerInfo, setBalance, csrf) => {
         let formId = inputs.formId;
         return fetch(`/passbook-item/${formId}`, {
             method: 'GET',
@@ -42,13 +42,13 @@ const PassbookController = {
                 setCustomerInfo(null);
             }
             else if(data.passbook) {
+                setBalance(null);
                 setTableData(data.passbook.passbookitems);
                 setCustomerInfo(data);
             }
             else throw new Error(data);
         })
         .catch(err => {
-            console.log(err);
             toast.error('Failed to retrieve payments, Something went wrong', {autoClose: 5000});       
         });
     },

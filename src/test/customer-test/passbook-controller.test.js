@@ -71,11 +71,11 @@ describe('Passbook Controller Cases', () => {
             const spyApi = jest.spyOn(PassbookController, 'getPassbookItems');
 
             mockFetch(data.getPassbookItems);
-            await perform(PassbookController.getPassbookItems,[{formId:1}, results.setTableData, results.setCustomerInfo], true);
+            await perform(PassbookController.getPassbookItems,[{formId:1}, results.setTableData, results.setCustomerInfo, results.setBalance, 'csrf'], true);
 
             //assertions
             expect(spyApi).toHaveBeenCalledTimes(1);
-            expect(spyApi).toHaveBeenCalledWith({formId:1}, results.setTableData, results.setCustomerInfo);
+            expect(spyApi).toHaveBeenCalledWith({formId:1}, results.setTableData, results.setCustomerInfo, results.setBalance, 'csrf');
             expect(results.customerInfo).toHaveProperty('pay_type');   // hooks used in passbook page for customer information
             expect(results.customerInfo).toHaveProperty('customer');   // hooks used in passbook page for customer information
             expect(results.customerInfo).toHaveProperty('passbook');   // hooks used in passbook page for customer information

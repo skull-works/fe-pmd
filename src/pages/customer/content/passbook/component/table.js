@@ -11,7 +11,7 @@ import { Hooks } from '../hooks';
 
 
 const PassbookItems = ({parentStore, csrf}) => {
-    const { tableData, customerInfo, setTableData  } = parentStore; 
+    const { tableData, customerInfo, setTableData, balance, setBalance  } = parentStore; 
     const store = Hooks();
     const { InputChange } = GeneralAction;
     if(customerInfo) {
@@ -80,7 +80,7 @@ const PassbookItems = ({parentStore, csrf}) => {
                                                 callback={Dialog.confirm}
                                                 args={[
                                                     PassbookController.postPassbookItem,
-                                                    [store.inputs, csrf, store.setBalance, store.balance],
+                                                    [store.inputs, csrf, setBalance, balance],
                                                     'Add Payment',
                                                     'Are you sure to add new payment?'
                                                 ]} />
@@ -133,7 +133,7 @@ const PassbookItems = ({parentStore, csrf}) => {
                                                 callback={Dialog.confirm}
                                                 args={[
                                                     PassbookController.postPassbookItem,
-                                                    [store.inputs, csrf, store.setBalance, store.balance],
+                                                    [store.inputs, csrf, setBalance, balance],
                                                     'Add Payment',
                                                     'Are you sure to add new payment?'
                                                 ]}/>
