@@ -52,7 +52,8 @@ const PassbookController = {
             toast.error('Failed to retrieve payments, Something went wrong', {autoClose: 5000});       
         });
     },
-    postPassbookItem: async (inputs, csrf) => {
+    postPassbookItem: async (inputs, csrf, setBalance, balance) => {
+        inputs.balance = balance ? balance : inputs.balance;
         return fetch('/passbook-item', {
             method: 'POST',
             headers: {'Content-Type': 'application/json',
@@ -63,14 +64,33 @@ const PassbookController = {
         .then(data => {
             if(data.error)                                                  //usually if no passbook found
                 toast.error(data.error.message, {autoClose:5000})
-            else if(data.success)
-                toast.success(data.message, {autoClose:5000})
+            else if(data.success){
+                toast.success(data.message, {autoClose:5000});
+                setBalance(data.passbookItem.balance);
+            }
             else throw new Error('Something went wrong');
         })
         .catch(err => {
             console.log(err);
             toast.error('Failed to add payment, Something went wrong', {autoClose: 5000});     
         })
+    },
+    deletePassbookItem: async (paymentId, formId, collection, dates_paid, tableData, setTableData, csrf) => {
+        try{
+            let res = await fetch(`/passbook-item/${paymentId}/${formId}/${collection}/${dates_paid}`, {
+                method: 'DELETE',
+                headers: { 'X-CSRF-TOKEN': csrf } 
+            });
+            if(res.status === 204){
+                let filteredData = tableData.filter(data => data.id !== paymentId);
+                setTableData(filteredData);
+                return toast.success('Successfuly deleted', { autoClose: 5000 });
+            }
+            return toast.error('Something went wrong, contact system administrator', { autoClose: 5000 });
+            
+        }catch(err){
+            toast.error('Something went wrong, contact system administrator', { autoClose: 5000 });
+        }
     }
 }
 

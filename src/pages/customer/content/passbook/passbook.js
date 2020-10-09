@@ -49,7 +49,7 @@ const Passbook = () => {
                 </div>
             </div>
             {/* content */}
-            <PassbookItems tableData={store.tableData} details={store.customerInfo} csrf={csrf}/>
+            <PassbookItems parentStore={store} csrf={csrf}/>
         </div>
     );
 }

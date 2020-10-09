@@ -5,6 +5,8 @@ export const Hooks = () => {
     const [inputs, setInputs] = useState({});
     const [tableData, setTableData] = useState([]);
     const [customerInfo, setCustomerInfo] = useState();
+    const [balance, setBalance] = useState();
+
     return  {
         inputs,
         setInputs,
@@ -13,6 +15,8 @@ export const Hooks = () => {
         tableData,
         setTableData,
         customerInfo,
-        setCustomerInfo
+        setCustomerInfo,
+        balance,
+        setBalance
     };
 };

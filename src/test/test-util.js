@@ -14,6 +14,13 @@ const mockFetch = (data) => {
     })
 }
 
+const mockFetch2 = (data) => {
+    global.fetch = jest.fn().mockImplementation(() => {
+        1 + 1
+        return data
+    })
+}
+
 
 const renderWith = (route) => {
     const history = createMemoryHistory();
@@ -84,5 +91,6 @@ module.exports = {
     renderHook,
     perform,
     loopInputs,
-    mockFetch
+    mockFetch,
+    mockFetch2
 }
