@@ -44,12 +44,12 @@ const Passbook = () => {
                         <Button label="Search" 
                                 position="w-full md:h-20 md:w-24 mt-4 md:mt-0"
                                 callback={PassbookController.getPassbookItems} 
-                                args={[store.inputs, store.setTableData, store.setCustomerInfo, csrf]} />
+                                args={[store.inputs, store.setTableData, store.setCustomerInfo, store.setBalance, csrf]} />
                     </div>
                 </div>
             </div>
             {/* content */}
-            <PassbookItems tableData={store.tableData} details={store.customerInfo} csrf={csrf}/>
+            <PassbookItems parentStore={store} csrf={csrf}/>
         </div>
     );
 }

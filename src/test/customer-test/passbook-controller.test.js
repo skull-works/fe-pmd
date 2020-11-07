@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import { cleanup } from '@testing-library/react'; 
 
 import PassbookController from '../../controllers/passbook';
-import { mockFetch, renderHook, perform } from '../test-util';
+import { mockFetch, mockFetch2, renderHook, perform } from '../test-util';
 import data from './data/post-passbook';
 import { Hooks } from '../../pages/customer/content/passbook/hooks';
 
@@ -44,11 +44,13 @@ describe('Passbook Controller Cases', () => {
             it('successful should return success message', async () => {
                 const spyToast = jest.spyOn(toast, 'success');
                 const spypostPassbookItem = jest.spyOn(PassbookController, 'postPassbookItem');
+                const store = renderHook(Hooks);
                 mockFetch(data.postPassbookItemSuccess);
-                await PassbookController.postPassbookItem({passbookId:1, balance: 3000, collection: 200});
+                await perform(PassbookController.postPassbookItem,[{passbookId:1, balance: 3000, collection: 200}, 'csrf', store.setBalance, store.balance], true);
                 
                 expect(spypostPassbookItem).toHaveBeenCalledTimes(1);
                 expect(spyToast).toHaveBeenCalledTimes(1);
+                expect(store.balance).toEqual(2800);
             });
 
             it('error should call toast.error', async () => {
@@ -69,11 +71,11 @@ describe('Passbook Controller Cases', () => {
             const spyApi = jest.spyOn(PassbookController, 'getPassbookItems');
 
             mockFetch(data.getPassbookItems);
-            await perform(PassbookController.getPassbookItems,[{formId:1}, results.setTableData, results.setCustomerInfo], true);
+            await perform(PassbookController.getPassbookItems,[{formId:1}, results.setTableData, results.setCustomerInfo, results.setBalance, 'csrf'], true);
 
             //assertions
             expect(spyApi).toHaveBeenCalledTimes(1);
-            expect(spyApi).toHaveBeenCalledWith({formId:1}, results.setTableData, results.setCustomerInfo);
+            expect(spyApi).toHaveBeenCalledWith({formId:1}, results.setTableData, results.setCustomerInfo, results.setBalance, 'csrf');
             expect(results.customerInfo).toHaveProperty('pay_type');   // hooks used in passbook page for customer information
             expect(results.customerInfo).toHaveProperty('customer');   // hooks used in passbook page for customer information
             expect(results.customerInfo).toHaveProperty('passbook');   // hooks used in passbook page for customer information
@@ -91,6 +93,22 @@ describe('Passbook Controller Cases', () => {
             expect(spyToast).toHaveBeenCalledTimes(1);
             expect(spyApi).toHaveBeenCalledTimes(1);
             expect(spyApi).toHaveBeenCalledWith({formId:1}, results.setTableData, results.setCustomerInfo);
+        });
+    });
+
+    describe('Delete', () => {
+        let results;
+        beforeEach(() => {
+            results = renderHook(Hooks);
+        });
+
+        it('deletePassbookItem controller successful delete calls toast success', async () => {
+            const spyToast = jest.spyOn(toast, 'success').mockImplementation(() => "mock toast");
+            mockFetch2({ status: 204 });
+            await perform(PassbookController.deletePassbookItem,[1, 1, 100, '2020-10-08', [{id:1},{id:2}], results.setTableData, 'csrf'], true);
+
+            expect(spyToast).toHaveBeenCalledTimes(1);
+            expect(results.tableData.length).toEqual(1);
         });
     });
 });

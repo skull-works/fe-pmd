@@ -117,7 +117,25 @@ describe('Passbook Component', () => {
 
             expect(spyDialog).toHaveBeenCalledTimes(1);
             expect(spyPostPassbookItem).toHaveBeenCalledTimes(1);
-            expect(spyPostPassbookItem).toHaveBeenCalledWith({applicationId: 4, "balance": 2800, "collection": "100", "passbookId": 2}, undefined); //undefined here is csrf which is not necessary in test
+            expect(spyPostPassbookItem.mock.calls[0][0]).toEqual({applicationId: 4, "balance": 2800, "collection": "100", "passbookId": 2}); //undefined here is csrf which is not necessary in test
         });
-    }); 
+    });
+    
+    describe('Delete a payment record', () => {
+        it('should call deletePassbookItem controller', async () => {
+            const spyDialog = jest.spyOn(Dialog, 'confirm');
+            const spyDeletePassbookItem = jest.spyOn(PassbookController, 'deletePassbookItem').mockImplementation(inputs => <h1>MockController</h1>);
+            const { getByTestId, getByLabelText, getByText, getAllByText } = await performComp(Passbook, '/customer');
+
+            perform(fireEvent.click,[getByTestId("showInputs-button")]);                               //click button to show inputs
+            fireEvent.change(getByLabelText("Form ID:"), {target: { value: 1 } });                     //add input
+            mockFetch(data.getPassbookItems);                                                          //mock data to return correct data format
+            await perform(fireEvent.click,[getByText("Search")], true);                                //click search to call getPassbookItems controller 
+            fireEvent.click(getAllByText("Delete")[0]);                                                //click Delete button to call Dialog.confirm
+            fireEvent.click(getByText("Yes"));                                                         //to call postPassbookItem controller
+
+            expect(spyDialog).toHaveBeenCalledTimes(1);
+            expect(spyDeletePassbookItem).toHaveBeenCalledTimes(1);
+        });
+    });
 });

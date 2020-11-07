@@ -8,15 +8,18 @@ import GeneralAction from '../../../../../actions/general';
 import { Hooks } from '../hooks';
 
 
-const PassbookItems = ({tableData, details, csrf}) => {
+
+
+const PassbookItems = ({parentStore, csrf}) => {
+    const { tableData, customerInfo, setTableData, balance, setBalance  } = parentStore; 
     const store = Hooks();
     const { InputChange } = GeneralAction;
-    if(details) {
-        store.inputs.applicationId = details.id;
-        store.inputs.passbookId = details.passbook.id;
+    if(customerInfo) {
+        store.inputs.applicationId = customerInfo.id;
+        store.inputs.passbookId = customerInfo.passbook.id;
     }
     if(tableData.length > 0) store.inputs.balance = tableData[tableData.length-1].balance;
-    else if(details)  store.inputs.balance = details.total;
+    else if(customerInfo)  store.inputs.balance = customerInfo.total;
 
     //css
     let newPaymentInputCss = "h-6 w-10/12 rounded-md border-2 focus:outline-none focus:border-green-400 hover:border-green-400";
@@ -32,8 +35,8 @@ const PassbookItems = ({tableData, details, csrf}) => {
                             <th>COLLECTION</th>
                             <th>BALANCE</th>
                             <th>INTEREST/PENALTY</th>
-                            <th>COLLECTOR'S INITIAL</th>
                             <th>REMARKS</th>
+                            <th> </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,14 +53,24 @@ const PassbookItems = ({tableData, details, csrf}) => {
                                         <td>{i.collection}</td>
                                         <td>{i.balance}</td>
                                         <td>{i.interest_penalty}</td>
-                                        <td>{i.collector_initial}</td>
                                         <td>{i.remarks}</td>
+                                        <td className="deleteRecord">
+                                            <button className="sm:w-20 rounded-md border-2 text-red-600 border-red-600 focus:outline-none hover:text-gray-200 hover:bg-red-600"
+                                                    onClick={() => {
+                                                        Dialog.confirm(PassbookController.deletePassbookItem, 
+                                                                       [i.id, customerInfo.id, i.collection, i.dates_paid, tableData, setTableData, csrf],
+                                                                       'Delete Payment!',
+                                                                       'Are you sure to delete this payment?')
+                                                    }}>
+                                                Delete
+                                            </button>
+                                        </td>
                                     </tr>   
                                 ))
                         }
 
                         {/* add input for new record */}
-                        { details ?
+                        { customerInfo ?
                             <>
                                 {/* tab to desktop view */}
                                 <tr  className="paymentInputs text-center h-12 hover:bg-gray-300">
@@ -67,7 +80,7 @@ const PassbookItems = ({tableData, details, csrf}) => {
                                                 callback={Dialog.confirm}
                                                 args={[
                                                     PassbookController.postPassbookItem,
-                                                    [store.inputs, csrf],
+                                                    [store.inputs, csrf, setBalance, balance],
                                                     'Add Payment',
                                                     'Are you sure to add new payment?'
                                                 ]} />
@@ -82,12 +95,10 @@ const PassbookItems = ({tableData, details, csrf}) => {
                                     <td><input className={`${newPaymentInputCss}`} placeholder="Interest Penalty"    name="interets_penalty"  
                                                 onChange={e => InputChange(e.target.name, e.target.value, store)}/>    
                                     </td>
-                                    <td><input className={`${newPaymentInputCss}`} placeholder="Collector's Initial" name="collector_initial" 
-                                                onChange={e => InputChange(e.target.name, e.target.value, store)}/>    
-                                    </td>
                                     <td><input className={`${newPaymentInputCss}`} placeholder="Remarks"             name="remarks"           
                                                 onChange={e => InputChange(e.target.name, e.target.value, store)}/>    
                                     </td>
+                                    <td></td>
                                 </tr>
 
                                 {/* mobile view */}
@@ -111,12 +122,6 @@ const PassbookItems = ({tableData, details, csrf}) => {
                                 </tr>
                                 <tr  className={`${newMobileInputCssRow}`}>
                                     <td colSpan={7}>
-                                        <input className={`${newPaymentInputCss}`} placeholder="Collector's Initial" name="collector_initial"
-                                                onChange={e => InputChange(e.target.name, e.target.value, store)}/>
-                                    </td>
-                                </tr>
-                                <tr  className={`${newMobileInputCssRow}`}>
-                                    <td colSpan={7}>
                                         <input className={`${newPaymentInputCss}`} placeholder="Remarks"             name="remarks"
                                                 onChange={e => InputChange(e.target.name, e.target.value, store)}/>
                                     </td>
@@ -128,7 +133,7 @@ const PassbookItems = ({tableData, details, csrf}) => {
                                                 callback={Dialog.confirm}
                                                 args={[
                                                     PassbookController.postPassbookItem,
-                                                    [store.inputs, csrf],
+                                                    [store.inputs, csrf, setBalance, balance],
                                                     'Add Payment',
                                                     'Are you sure to add new payment?'
                                                 ]}/>
