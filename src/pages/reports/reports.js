@@ -12,6 +12,7 @@ const Reports = () => {
 
 	return (
 		<Fragment>
+			<title>Reports</title>
 			<div className="flex flex-col sm:flex-row">
 				<Navbar />
 				<div
