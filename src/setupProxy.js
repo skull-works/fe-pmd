@@ -10,4 +10,5 @@ module.exports = function(app) {
   app.use('/passbook',  createProxyMiddleware({ target: 'http://localhost:9000' }));
   app.use('/passbook-item',  createProxyMiddleware({ target: 'http://localhost:9000' }));
   app.use('/calendarReport', createProxyMiddleware({ target: 'http://localhost:9000' }));
+  app.use('/GraphReport', createProxyMiddleware({ target: 'http://localhost:9000' }));
 }

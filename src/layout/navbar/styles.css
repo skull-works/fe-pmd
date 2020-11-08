@@ -1,24 +1,50 @@
-#nav{
-    transition: 0.5s ease;
-    animation: show;
-    animation-duration: 0.7s;
+#nav {
+	height: 100%; /* 100% Full-height */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Stay on top */
+	top: 0;
+	left: 0;
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 60px; /* Place content 60px from the top */
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-#navHide{
-    transition: 0.5s ease;
-    animation-duration: 0.7s;
-    margin-left: -20vh;
+#nav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
 }
 
-
-@media(max-width: 640px){
-    #navHide{
-        display:none;
-    }
+#main {
+	transition: margin-left 0.5s;
+	width: 100%;
 }
 
-@keyframes show{
-    from {margin-left: -20vh;}
-    to {margin-left: 0;}
+#navHide {
+	height: 100%; /* 100% Full-height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Stay on top */
+	top: 0;
+	left: 0;
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 60px; /* Place content 60px from the top */
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
+@media (max-width: 640px) {
+	#navHide {
+		display: none;
+	}
+}
+
+@keyframes show {
+	from {
+		margin-left: -20vh;
+	}
+	to {
+		margin-left: 0;
+	}
+}
