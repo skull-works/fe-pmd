@@ -57,13 +57,13 @@ describe('Authentication Controller', () => {
         it('Recieved an Error maybe due to invalid token should return false', async () => {
             mockFetch({error: { message: 'Invalid token', statusCode: 403}});
             let returnVal = await AuthenticationController.isStillLoggedIn();
-            expect(returnVal).toBeFalsy();
+            expect(returnVal.isLoggedIn).toBeFalsy();
         });
 
         it('Something went wrong or isLoggedIn is undefined should return undefined', async () => {
             mockFetch({ noErrorPropertyAndnoIsLoggedIn: 'noErrorPropertyAndnoIsLoggedIn'});
             let returnVal = await AuthenticationController.isStillLoggedIn();
-            expect(returnVal).toBeFalsy();
+            expect(returnVal.isLoggedIn).toBeFalsy();
         });
 
         it('User is still logged in should return the proper data', async () => {

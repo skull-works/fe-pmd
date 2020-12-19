@@ -24,11 +24,11 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test --unhandled-rejections=strict",
 		"eject": "react-scripts eject",
-		"build-css": "tailwindcss build src/tailwindcss/styles.css -o public/styles.css",
-		"docker-build": "docker build . -t mabutalid1/pmdfrontend:latest && docker push mabutalid1/pmdfrontend:latest",
+		"build:css": "tailwindcss build src/tailwindcss/styles.css -o public/styles.css",
+		"docker:build": "docker build . -t mabutalid1/pmdfrontend:latest && docker push mabutalid1/pmdfrontend:latest",
 		"up": "docker run --name my-frontend --env HOST=http://host.docker.internal --rm -it -p 3000:3000/tcp -d mabutalid1/pmdfrontend:latest",
 		"api": "docker run --name my-pmdapi --env JWTSECRET=devSecret --env HOST=host.docker.internal --env REDISPORT=6379 --env DBNAME=pmd_dev --env USER=marcoadmin0 --env PASS=marcopass0 --rm -p 9000:9000 -d mabutalid1/pmdapi:latest",
-		"up-redis": "docker run --rm --name my-redis -p 6379:6379/tcp -d redis:latest"
+		"up:redis": "docker run --rm --name my-redis -p 6379:6379/tcp -d redis:latest"
 	},
 	"eslintConfig": {
 		"extends": "react-app"

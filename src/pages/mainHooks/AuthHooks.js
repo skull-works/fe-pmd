@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import AuthenticationController from '../../controllers/authentication';
 import { useHistory } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 
 const { userLogin, getCsrf, isStillLoggedIn } = AuthenticationController;
 
@@ -51,10 +52,11 @@ const { userLogin, getCsrf, isStillLoggedIn } = AuthenticationController;
         const checkUserLogin = async () => {
             let data = await isStillLoggedIn();
             if(data && data.isLoggedIn){
-                setCSRF(data.csrfToken);
+                setCSRF(data.csrfToken)
                 return;
             }
-            history.replace({ pathname: "/notAuthenticated" });
+            const errorMessage = data ? data.message : 'not authenticated';
+            history.replace({ pathname: "/notAuthenticated", state: errorMessage });
             return
         }
 

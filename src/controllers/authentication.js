@@ -38,10 +38,12 @@ const AuthenticationController = {
     isStillLoggedIn: async () => {
         try{
             let data = await fetch('/isLoggedIn').then(res => res.json()).catch(err => err);
-            if(data.error || !data.isLoggedIn) 
-                return false
+            if(data.error || !data.isLoggedIn) {
+                return { isLoggedIn: false, message: data.error ? data.error.message : 'not authenticated' }
+            }
             return data;
         }catch(err){
+            console.log(err)
             toast.error('Something went wrong, not able to authenticate, contact administrator', {autoClose: 5000});
         }
     },
