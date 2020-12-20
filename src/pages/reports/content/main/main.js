@@ -10,6 +10,10 @@ const MainReports = () => {
             <Link to="/reports?q=Calendar"  className={`${boxCss}`}>
                 Calendar Reports
             </Link>
+            <br />
+            <Link to="/reports?q=Graphs"  className={`${boxCss}`}>
+                Graph Reports
+            </Link>
         </div>
     )
 }

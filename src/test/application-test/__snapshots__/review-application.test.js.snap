@@ -11,7 +11,7 @@ exports[`Application details Update Application details Update area_code, first_
     id="header-wrapper"
   >
     <div
-      class="w-screen sm:w-full h-20vh bg-green-500 flex flex-wrap content-center justify-center"
+      class="w-screen sm:w-full h-10vh bg-green-500 flex flex-wrap content-center justify-center"
     >
       <h1
         class="text-lg md:text-4xl"
@@ -24,15 +24,23 @@ exports[`Application details Update Application details Update area_code, first_
     class="h-80vh flex flex-col sm:flex-row"
   >
     <div
+      class="invisible"
+    />
+    <div
       class="w-auto"
       data-testid="navbar-wrapper"
       id="navbar-wrapper"
     >
       <div
-        class="block h-full pb-8 sm:pb-0 sm:w-20vh bg-gray-300 sm:bg-gray-200 shadow-md sm:shadow-inner overflow-auto whitespace-normal"
+        class="block h-full pb-8 sm:pb-0 sm:w-34vh bg-gray-300 sm:bg-gray-200 shadow-md sm:shadow-inner overflow-auto whitespace-normal"
         data-testid="navbar"
         id="navHide"
       >
+        <button
+          class="invisible focus:outline-none"
+        >
+          ×
+        </button>
         <div
           class="w-3/12 sm:w-8/12 mt-8 mx-auto rounded-full overflow-auto"
         >
@@ -466,7 +474,7 @@ exports[`Application details Update Application details Update area_code, first_
     id="header-wrapper"
   >
     <div
-      class="w-screen sm:w-full h-20vh bg-green-500 flex flex-wrap content-center justify-center"
+      class="w-screen sm:w-full h-10vh bg-green-500 flex flex-wrap content-center justify-center"
     >
       <h1
         class="text-lg md:text-4xl"
@@ -479,15 +487,23 @@ exports[`Application details Update Application details Update area_code, first_
     class="h-80vh flex flex-col sm:flex-row"
   >
     <div
+      class="invisible"
+    />
+    <div
       class="w-auto"
       data-testid="navbar-wrapper"
       id="navbar-wrapper"
     >
       <div
-        class="block h-full pb-8 sm:pb-0 sm:w-20vh bg-gray-300 sm:bg-gray-200 shadow-md sm:shadow-inner overflow-auto whitespace-normal"
+        class="block h-full pb-8 sm:pb-0 sm:w-34vh bg-gray-300 sm:bg-gray-200 shadow-md sm:shadow-inner overflow-auto whitespace-normal"
         data-testid="navbar"
         id="navHide"
       >
+        <button
+          class="invisible focus:outline-none"
+        >
+          ×
+        </button>
         <div
           class="w-3/12 sm:w-8/12 mt-8 mx-auto rounded-full overflow-auto"
         >
