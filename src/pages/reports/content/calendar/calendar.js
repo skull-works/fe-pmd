@@ -39,8 +39,8 @@ const CalendarReports = () => {
                             <Input label="Area Code:"  name="area_code"   store={store}/>
                         </div>
                         <div className="md:ml-4">
-                            <Date label="From:"        name="start_date"  store={store} />
-                            <Date label="To:"          name="end_date"    store={store} />
+                            <Date label="From:"        name="start_date"  store={store}/>
+                            <Date label="To:"          name="end_date"    store={store}/>
                         </div>
                     </div>
                     <div className="w-11/12 mx-auto flex flex-wrap content-center justify-center">

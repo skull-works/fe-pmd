@@ -7,10 +7,10 @@ const Date = ({label, name, store}) => {
             <li className="flex flex-col">
                 <label htmlFor={name}>{label}</label>
                 <input type="date"
-                       id={name}  
-                       name={name} 
-                       onChange={e => InputChange(name, e.target.value, store)} 
-                       className="border h-7 rounded-md focus:outline-none focus:border-blue-500"/>
+                    id={name}  
+                    name={name} 
+                    onChange={e => InputChange(name, e.target.value, store)} 
+                    className="border h-7 rounded-md focus:outline-none focus:border-blue-500"/>
             </li>
     )
 }
