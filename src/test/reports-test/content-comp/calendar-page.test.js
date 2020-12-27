@@ -14,7 +14,9 @@ describe('Calendar Report Page', () => {
 
     it('With Payments View', async () => {
         mockFetch(calendarData.getData);
-        const { asFragment, getByText } = renderComp(CalendarReports, '/reports?q=Calendar');
+        const { asFragment, getByText, getByLabelText } = renderComp(CalendarReports, '/reports?q=Calendar');
+        fireEvent.change(getByLabelText('From:'), { target: { value: "2020-09-01" } });
+        fireEvent.change(getByLabelText('To:'), { target: { value: "2020-09-30" } });
         await perform(fireEvent.click,[getByText("Search")], true);
 
         expect(asFragment()).toMatchSnapshot();
@@ -22,9 +24,21 @@ describe('Calendar Report Page', () => {
 
     it('Double Payment in Payments View for 1 date should add both payments', async () => {
         mockFetch(calendarData.getDataDoublePayment);
-        const { getByText } = renderComp(CalendarReports, '/reports?q=Calendar');
+        const { getByText, getByLabelText } = renderComp(CalendarReports, '/reports?q=Calendar');
+        fireEvent.change(getByLabelText('From:'), { target: { value: "2020-09-01" } });
+        fireEvent.change(getByLabelText('To:'), { target: { value: "2020-09-30" } });
         await perform(fireEvent.click,[getByText("Search")], true);
 
         getByText('P400');
+    })
+
+    it('Customer Application is closed should show message indicating it is CLOSED', async () => {
+        mockFetch(calendarData.getPaymentWithApplicationStatusClosed);
+        const { getByText, getByLabelText } = renderComp(CalendarReports, '/reports?q=Calendar');
+        fireEvent.change(getByLabelText('From:'), { target: { value: "2020-09-01" } });
+        fireEvent.change(getByLabelText('To:'), { target: { value: "2020-09-30" } });
+        await perform(fireEvent.click,[getByText("Search")], true);
+
+        getByText("This customer's passbook is CLOSED");
     })
 });

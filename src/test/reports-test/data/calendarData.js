@@ -12,6 +12,7 @@ exports.getData = {
         "first_name": "TestFname1",
         "last_name": "TestLname1",
         "type_loan": "SP",
+        "status": "ONGOING",
         "customer": {
           "contact_no": "09990371921"
         },
@@ -31,6 +32,7 @@ exports.getData = {
         "area_code": "TEST-02",
         "first_name": "TestFname2",
         "last_name": "TestLname2",
+        "status": "ONGOING",
         "type_loan": "NEW",
         "customer": {
           "contact_no": "09990371921"
@@ -51,6 +53,7 @@ exports.getData = {
         "area_code": "TEST-03",
         "first_name": "TestFname3",
         "last_name": "TestLname3",
+        "status": "ONGOING",
         "type_loan": "NEW",
         "customer": {
           "contact_no": "09990371222"
@@ -84,6 +87,44 @@ exports.getData = {
         "first_name": "TestFname1",
         "last_name": "TestLname1",
         "type_loan": "SP",
+        "status": "ONGOING",
+        "customer": {
+          "contact_no": "09990371921"
+        },
+        "passbook": {
+          "id": 5,
+          "passbookitems": [
+            {
+              "id": 26,
+              "dates_paid": "2020-09-22",
+              "collection": 200
+            },
+            {
+              "id": 27,
+              "dates_paid": "2020-09-22",
+              "collection": 200
+            }
+          ]
+        }
+      },
+    ]
+  }
+
+  exports.getPaymentWithApplicationStatusClosed = {
+    "allDates": [
+      "2020-09-20",
+      "2020-09-21",
+      "2020-09-22",
+      "2020-09-23"
+    ],
+    "customerPayments": [
+      {
+        "id": 3,
+        "area_code": "TEST-04",
+        "first_name": "TestFname4",
+        "last_name": "TestLname4",
+        "type_loan": "SP",
+        "status": "CLOSED",
         "customer": {
           "contact_no": "09990371921"
         },
