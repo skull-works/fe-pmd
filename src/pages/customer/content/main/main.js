@@ -10,6 +10,9 @@ const MainCustomer = () => {
             <Link to="/customer?q=Passbook"  className={`${boxCss}`}>
                 Passbook
             </Link>
+            <Link to="/customer?q=PassbookHistory" className={`${boxCss} mt-8`}>
+                Customer Passbook Histories
+            </Link>
         </div>
     )
 }

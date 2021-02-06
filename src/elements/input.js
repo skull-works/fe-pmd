@@ -3,7 +3,7 @@ import GeneralActions from '../actions/general';
 
 
 const Input = ({label, name, store}) => {
-    const {InputChange} = GeneralActions;
+    const { InputChange } = GeneralActions;
     return (
             <li className="flex flex-col">
                 {label?<label htmlFor={name}>{label}</label>:''}

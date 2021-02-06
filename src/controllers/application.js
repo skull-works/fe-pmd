@@ -34,7 +34,18 @@ const ApplicationController = {
             toast.error('something went wrong, please call system administrator', {autoClose: 20000});
         })
     },
-    getApplications: (inputs, setTableData, csrf) => {
+    getApplications: (inputs, setTableData, csrf, isDefaultDate) => {
+        let start_date, end_date;
+        if (isDefaultDate) {
+            if (!inputs.first_name && !inputs.last_name)
+                return toast.error('first name and last name must be specified', {autoClose: 5000});
+            const currentDate = new Date().toISOString().split('T')[0];
+            start_date = '2020-01-01';
+            end_date = currentDate;
+        } else {
+            start_date = inputs.start_date
+            end_date = inputs.end_date
+        }
         let query = JSON.stringify({
             area_code: inputs.area_code,
             first_name: inputs.first_name,
@@ -42,7 +53,7 @@ const ApplicationController = {
             type_loan: inputs.type_loan,
             status: inputs.status
         });
-        return fetch(`/application_form/${inputs.start_date}/${inputs.end_date}?inputs=${query}`,{
+        return fetch(`/application_form/${start_date}/${end_date}?inputs=${query}`,{
             method: 'GET',
             headers: {'Content-Type':'application/json',
                       'X-CSRF-TOKEN': csrf},
