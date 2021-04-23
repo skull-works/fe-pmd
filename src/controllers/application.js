@@ -125,7 +125,7 @@ const ApplicationController = {
                 toast.error(data.error.message, {autoClose: 10000});
             else
                 toast.success(`${data.message} Updated successfuly`, {autoClose:5000});
-            if(param.areaCode)
+            if(param.areaCode && !data.error)
                 changeManyValue(param.tableData, param.areaCode, param.fieldName, param.fieldValue,  param.id, setTableData);  
             setApplicationDetails(null);
         })
