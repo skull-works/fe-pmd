@@ -1,12 +1,16 @@
 import React from 'react';
+
 //controllers
 import ApplicationController from '../../../../controllers/application';
+
 //elements
 import Button from '../../../../elements/button';
+
 // css
 import '../styles.css';
 
-const ApplicationTable = ({tableData, setApplicationDetails, csrf}) => {
+const ApplicationTable = ({tableData, setApplicationDetails, csrf, history, authenticateFalseAction}) => {
+
     return (
         <div id="table-wrapper">
                 <table className="applicationTable w-full">
@@ -33,7 +37,7 @@ const ApplicationTable = ({tableData, setApplicationDetails, csrf}) => {
                                 <td className="flex flex-wrap justify-center content-center"><Button label="Review" 
                                             position="w-16 mt-2"
                                             callback={ApplicationController.getApplicationDetail} 
-                                            args={[i.area_code, i.id, setApplicationDetails, csrf]} />
+                                            args={[i.area_code, i.id, setApplicationDetails, csrf, history, authenticateFalseAction]} />
                                 </td>
                             </tr>   
                         ))}

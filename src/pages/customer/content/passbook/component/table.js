@@ -10,7 +10,7 @@ import { Hooks } from '../hooks';
 
 
 
-const PassbookItems = ({parentStore, csrf}) => {
+const PassbookItems = ({parentStore, csrf, history, authenticateFalseAction}) => {
     const { tableData, customerInfo, setTableData, balance, setBalance  } = parentStore; 
     const store = Hooks();
     const { InputChange } = GeneralAction;
@@ -58,7 +58,7 @@ const PassbookItems = ({parentStore, csrf}) => {
                                             <button className="sm:w-20 rounded-md border-2 text-red-600 border-red-600 focus:outline-none hover:text-gray-200 hover:bg-red-600"
                                                     onClick={() => {
                                                         Dialog.confirm(PassbookController.deletePassbookItem, 
-                                                                       [i.id, customerInfo.id, i.collection, i.dates_paid, tableData, setTableData, csrf],
+                                                                       [i.id, customerInfo.id, i.collection, i.dates_paid, tableData, setTableData, csrf, history, authenticateFalseAction],
                                                                        'Delete Payment!',
                                                                        'Are you sure to delete this payment?')
                                                     }}>
@@ -80,7 +80,7 @@ const PassbookItems = ({parentStore, csrf}) => {
                                                 callback={Dialog.confirm}
                                                 args={[
                                                     PassbookController.postPassbookItem,
-                                                    [store.inputs, csrf, setBalance, balance],
+                                                    [store.inputs, csrf, setBalance, balance, history, authenticateFalseAction],
                                                     'Add Payment',
                                                     'Are you sure to add new payment?'
                                                 ]} />
@@ -133,7 +133,7 @@ const PassbookItems = ({parentStore, csrf}) => {
                                                 callback={Dialog.confirm}
                                                 args={[
                                                     PassbookController.postPassbookItem,
-                                                    [store.inputs, csrf, setBalance, balance],
+                                                    [store.inputs, csrf, setBalance, balance, history, authenticateFalseAction],
                                                     'Add Payment',
                                                     'Are you sure to add new payment?'
                                                 ]}/>

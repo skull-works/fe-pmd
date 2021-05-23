@@ -49,7 +49,7 @@ const PassbookItems = ({ tableData, setTableData }) => {
                 args={[setTableData]} />
 
         </React.Fragment>
-        )
+    )
 }
 
 export default PassbookItems;

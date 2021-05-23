@@ -1,4 +1,5 @@
 import React  from 'react';
+import { useHistory } from 'react-router-dom';
 import './styles.css';
 import PassbookItems from './passbook-items/table';
 import ApplicationTable from './application-table/application-table';
@@ -9,11 +10,13 @@ import Button from '../../../../elements/button';
 import ApplicationController from '../../../../controllers/application';
 //Hooks
 import { Hooks } from  './hooks';
-import { IsUserStillLoggedIn } from '../../../mainHooks/AuthHooks';
+import authStore from '../../../../store/store';
 
 const CustomerApplications = () => {
+    const csrf = authStore((state) => state.csrfToken);
+    const authenticateFalseAction = authStore((state) => state.authenticateFalseAction);
+    let history = useHistory();
     const store = Hooks();
-    let { csrf } = IsUserStillLoggedIn();
 
     return(
         <div id="content-wrapper">
@@ -43,7 +46,7 @@ const CustomerApplications = () => {
                         <Button label="Search" 
                                 position="w-full md:h-20 md:w-24 mt-4 md:mt-0"
                                 callback={ApplicationController.getApplications} 
-                                args={[store.inputs, store.setTableData, csrf, true]} /> <br /> <br />
+                                args={[store.inputs, store.setTableData, csrf, true, history, authenticateFalseAction]} /> <br /> <br />
                                 {store.tableData.length === 0 ? null : 
                             <h2 className="py-4 font-semibold font-Nunito md:hidden">ROWS FETCHED: <span className="text-blue-500">{store.tableData.length}</span></h2> }
                     </div>
@@ -51,7 +54,7 @@ const CustomerApplications = () => {
             </div>
             {/* content */}
             {store.passbookItems.length > 0 ? <PassbookItems tableData={store.passbookItems} setTableData={store.setPassbookItems} />
-                                            : <ApplicationTable store={store} csrf={csrf}/>}
+                                            : <ApplicationTable store={store} csrf={csrf} history={history} authenticateFalseAction={authenticateFalseAction}/>}
         </div>
     )
 }

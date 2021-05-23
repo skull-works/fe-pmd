@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-//actions
+
 import ApplicationActions from '../../../actions/application';
-import { IsUserStillLoggedIn } from '../../mainHooks/AuthHooks';
+
+import authStore from '../../../store/store';
 
 const CreateApplication = () => {
+    const authenticateFalseAction = authStore((state) => state.authenticateFalseAction);
+    const csrf = authStore((state) => state.csrfToken);
+    
     const [type, setType] = useState(null);
-    let { csrf } = IsUserStillLoggedIn();
     return(
         <>
             <div className="w-9/12 flex flex-col md:flex-row justify-around mx-auto">
@@ -19,7 +22,7 @@ const CreateApplication = () => {
                 </button>
             </div>
             <div className="w-9/12 mt-12 flex flex-col md:flex-row justify-around  mx-auto">
-                <ApplicationActions.TypeApplication typeloan={type}  csrf={csrf} />
+                <ApplicationActions.TypeApplication typeloan={type}  csrf={csrf} authenticateFalseAction={authenticateFalseAction} />
             </div>
        </> 
     )

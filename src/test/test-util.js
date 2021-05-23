@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React from 'react';
 import { render, act, fireEvent } from '@testing-library/react'
 import { createMemoryHistory } from "history";

@@ -37,12 +37,12 @@ const ApplicationActions = {
                 return(<MainApplication />)
         }
     },
-    TypeApplication: ({ typeloan, csrf }) => {
+    TypeApplication: ({ typeloan, csrf, authenticateFalseAction }) => {
         switch (typeloan){
             case "New":
-                return(<ApplicationNew csrf={csrf}/>)
+                return(<ApplicationNew csrf={csrf} authenticateFalseAction={authenticateFalseAction} />)
             case "Renew":
-                return(<ApplicationRenew csrf={csrf} />)
+                return(<ApplicationRenew csrf={csrf}  authenticateFalseAction={authenticateFalseAction} />)
             default:
                 return(<h1 className="text-center text-md md:text-2xl pt-8">Choose The Type of Application First</h1>)
         }
