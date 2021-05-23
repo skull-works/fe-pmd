@@ -11,7 +11,7 @@ import GeneralActions from '../../../../actions/general';
 import { Hooks } from './hooks';
 import Dialog from '../../../../elements/dialog';
 
-const ApplicationRenew = ({ csrf }) => {
+const ApplicationRenew = ({ csrf, authenticateFalseAction }) => {
     const store = Hooks();
     let history = useHistory();
     const { MonthsToPayInput } = ApplicationActions;
@@ -51,7 +51,7 @@ const ApplicationRenew = ({ csrf }) => {
                     <button type="button" 
                             className="w-40 mt-4 rounded-md border-2 text-green-500 border-green-500 focus:outline-none hover:text-gray-200 hover:bg-green-500"
                             onClick={() => Dialog.confirm(ApplicationController.AddApplication, 
-                                                          [store.inputs, csrf, history],
+                                                          [store.inputs, csrf, history, authenticateFalseAction],
                                                           'Creating Application!',
                                                           'Are you sure you want to create Application?')}>
                         Create Application

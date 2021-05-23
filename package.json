@@ -16,7 +16,8 @@
 		"react-scripts": "^3.4.3",
 		"react-toastify": "^6.0.8",
 		"recharts": "^1.8.5",
-		"tailwindcss": "^1.4.6"
+		"tailwindcss": "^1.4.6",
+		"zustand": "^3.5.1"
 	},
 	"scripts": {
 		"start": "node server.js",

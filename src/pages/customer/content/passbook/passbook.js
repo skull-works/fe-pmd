@@ -1,4 +1,6 @@
 import React  from 'react';
+import { useHistory } from 'react-router-dom';
+
 //hooks
 import { Hooks } from './hooks';
 //elements
@@ -10,11 +12,13 @@ import CustomerInfo from './component/customer-info';
 //controller
 import PassbookController from '../../../../controllers/passbook';
 //Authentication
-import { IsUserStillLoggedIn } from '../../../mainHooks/AuthHooks';
+import authStore from '../../../../store/store';
 
 
 const Passbook = () => {  
-    let { csrf } = IsUserStillLoggedIn();
+    const csrf = authStore((state) => state.csrfToken);
+    const authenticateFalseAction = authStore((state) => state.authenticateFalseAction);
+    let history = useHistory();
     const store = Hooks();
     return(
         <div id="content-wrapper">
@@ -44,12 +48,12 @@ const Passbook = () => {
                         <Button label="Search" 
                                 position="w-full md:h-20 md:w-24 mt-4 md:mt-0"
                                 callback={PassbookController.getPassbookItems} 
-                                args={[store.inputs, store.setTableData, store.setCustomerInfo, store.setBalance, csrf]} />
+                                args={[store.inputs, store.setTableData, store.setCustomerInfo, store.setBalance, csrf, history, authenticateFalseAction]} />
                     </div>
                 </div>
             </div>
             {/* content */}
-            <PassbookItems parentStore={store} csrf={csrf}/>
+            <PassbookItems parentStore={store} csrf={csrf} history={history} authenticateFalseAction={authenticateFalseAction}/>
         </div>
     );
 }

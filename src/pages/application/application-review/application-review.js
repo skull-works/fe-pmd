@@ -1,21 +1,29 @@
 import React  from 'react';
 import './styles.css';
+import { useHistory } from 'react-router-dom';
+
 import ApplicationDetailsView from './application-details/application-details';
 import ApplicationTable from './application-table/application-table';
+
 //elements
 import Input from '../../../elements/input';
 import Select from '../../../elements/select';
 import Date from '../../../elements/date';
 import Button from '../../../elements/button';
+
 //controllers
 import ApplicationController from '../../../controllers/application';
+
 //Hooks
+import authStore from '../../../store/store';
 import { Hooks } from  './hooks';
-import { IsUserStillLoggedIn } from '../../mainHooks/AuthHooks';
 
 const ApplicationReview = () => {
+    const authenticateFalseAction = authStore((state) => state.authenticateFalseAction);
+    const csrf = authStore((state) => state.csrfToken);
+
+    const history = useHistory();
     const store = Hooks();
-    let { csrf } = IsUserStillLoggedIn();
 
     return(
         <div id="content-wrapper">
@@ -55,21 +63,32 @@ const ApplicationReview = () => {
                         <Button label="Search" 
                                 position="w-full md:h-20 md:w-24 mt-4 md:mt-0"
                                 callback={ApplicationController.getApplications} 
-                                args={[store.inputs, store.setTableData, csrf, false]} /> <br /> <br />
+                                args={[store.inputs, store.setTableData, csrf, false, history, authenticateFalseAction]} /> <br /> <br />
                                 {store.tableData.length === 0 ? null : 
                             <h2 className="py-4 font-semibold font-Nunito md:hidden">ROWS FETCHED: <span className="text-blue-500">{store.tableData.length}</span></h2> }
                     </div>
                 </div>
             </div>
             {/* content */}
-            {store.ApplicationDetails?<ApplicationDetailsView 
-                                        details={store.ApplicationDetails}  
-                                        tableStore={store}  
-                                        csrf={csrf}/>
-                                     :<ApplicationTable 
-                                        tableData={store.tableData} 
-                                        setApplicationDetails={store.setApplicationDetails}
-                                        csrf={csrf}/>}
+            {
+                    store.ApplicationDetails
+                ?
+                    <ApplicationDetailsView 
+                        details={store.ApplicationDetails}  
+                        tableStore={store}  
+                        csrf={csrf}
+                        history={history}
+                        authenticateFalseAction={authenticateFalseAction}
+                        />
+                :
+                    <ApplicationTable 
+                        tableData={store.tableData} 
+                        setApplicationDetails={store.setApplicationDetails}
+                        csrf={csrf}
+                        history={history}
+                        authenticateFalseAction={authenticateFalseAction}
+                        />
+            }
         </div>
     )
 }

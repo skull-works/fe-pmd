@@ -6,7 +6,7 @@ import Button from '../../../../../elements/button';
 // css
 import '../styles.css';
 
-const ApplicationTable = ({store, csrf}) => {
+const ApplicationTable = ({store, csrf, history, authenticateFalseAction}) => {
     const tableData = store.tableData;
 
     return (
@@ -35,7 +35,7 @@ const ApplicationTable = ({store, csrf}) => {
                                 <td className="flex flex-wrap justify-center content-center"><Button label="Payments" 
                                             position="w-20 mt-2"
                                             callback={PassbookController.getPassbookItems} 
-                                            args={[{ formId: i.id }, store.setPassbookItems, store.setCustomerInfo, store.setBalance, csrf]} />
+                                            args={[{ formId: i.id }, store.setPassbookItems, store.setCustomerInfo, store.setBalance, csrf, history, authenticateFalseAction]} />
                                 </td>
                             </tr>   
                         ))}
