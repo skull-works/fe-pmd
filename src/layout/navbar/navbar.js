@@ -2,13 +2,18 @@ import React, { useReducer } from 'react';
 import { Link, NavLink, useHistory } from 'react-router-dom';
 import './styles.css';
 import AuthenticationController from '../../controllers/authentication';
+import authStore from '../../store/store';
 
-async function logoutSession(history) {
+async function logoutSession(history, authenticateFalseAction) {
 	let isLogout = await AuthenticationController.willLogout();
-	if (isLogout) history.replace({ pathname: '/' });
+	if (isLogout) {
+		authenticateFalseAction();
+		history.replace({ pathname: '/' });
+	}
 }
 
 const Navbar = () => {
+	const authenticateFalseAction = authStore((state) => state.authenticateFalseAction);
 	const [Nav, setNav] = useReducer((Nav) => !Nav, false);
 	let history = useHistory();
 	return (
@@ -55,7 +60,7 @@ const Navbar = () => {
 						<li className="py-1 hover:text-red-400">
 							<button
 								className="focus:outline-none"
-								onClick={() => logoutSession(history)}
+								onClick={() => logoutSession(history, authenticateFalseAction)}
 							>
 								Logout
 							</button>
