@@ -16,7 +16,7 @@ const AuthenticationController = {
         }
     },
     userLogin: async (username, password, csrf) => {
-        try{
+        try {
             let data = await fetch('/login', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json',
@@ -31,24 +31,31 @@ const AuthenticationController = {
             else if(!data.isLoggedIn) 
                 throw new Error('Something went wrong, not able to login, check connections');
             return true
-        }catch(err){
+        } catch (err){
             toast.error('Something went wrong, not able to login, check connections', {autoClose: 5000});
         }
     },
-    isStillLoggedIn: async () => {
+    isStillAuthenticated: async (csrf) => {
         try{
-            let data = await fetch('/isLoggedIn').then(res => res.json()).catch(err => err);
-            if(data.error || !data.isLoggedIn) {
-                return { isLoggedIn: false, message: data.error ? data.error.message : 'not authenticated' }
-            }
+            let data = await fetch('/isStillAuthenticated', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrf
+                }
+            })
+            .then(res => res.json())
+            .catch(err => err);
+            if (data.error) 
+                throw new Error('Something went wrong in checking the authentication');
             return data;
         }catch(err){
-            console.log(err)
             toast.error('Something went wrong, not able to authenticate, contact administrator', {autoClose: 5000});
+            return { authenticated: false };
         }
     },
     willLogout: async () => {
-        try{
+        try {
             let data = await fetch('/logout').then(res => res.json()).catch(err => err);
             if(data.warning) {
                 toast.error(data.message, { autoClose: 10000 });
@@ -62,7 +69,7 @@ const AuthenticationController = {
                 toast.success(data.message, { autoClose: 5000 });
                 return true;
             }
-        }catch(err){
+        } catch (err) {
             toast.error(err, { autoClose: 5000 });
         }
     }

@@ -21,6 +21,9 @@ const GeneralActions = {
             else
                 store.setDaily(true);
         }
+    },
+    SetStateArrayZero: (callback) => {
+        callback([]);
     }
 }
 

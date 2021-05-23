@@ -1,28 +1,21 @@
 import React  from 'react';
-import './styles.css';
 import { useHistory } from 'react-router-dom';
-
-import ApplicationDetailsView from './application-details/application-details';
+import './styles.css';
+import PassbookItems from './passbook-items/table';
 import ApplicationTable from './application-table/application-table';
-
 //elements
-import Input from '../../../elements/input';
-import Select from '../../../elements/select';
-import Date from '../../../elements/date';
-import Button from '../../../elements/button';
-
+import Input from '../../../../elements/input';
+import Button from '../../../../elements/button';
 //controllers
-import ApplicationController from '../../../controllers/application';
-
+import ApplicationController from '../../../../controllers/application';
 //Hooks
-import authStore from '../../../store/store';
 import { Hooks } from  './hooks';
+import authStore from '../../../../store/store';
 
-const ApplicationReview = () => {
-    const authenticateFalseAction = authStore((state) => state.authenticateFalseAction);
+const CustomerApplications = () => {
     const csrf = authStore((state) => state.csrfToken);
-
-    const history = useHistory();
+    const authenticateFalseAction = authStore((state) => state.authenticateFalseAction);
+    let history = useHistory();
     const store = Hooks();
 
     return(
@@ -49,48 +42,21 @@ const ApplicationReview = () => {
                         <Input label="First name:" name="first_name"  store={store}/>
                         <Input label="Last name:"  name="last_name"   store={store}/>
                     </div>
-                    <div className="px-3">
-                        <Select label="Loan type:" name="type_loan"   store={store} options={['NEW', 'RENEW', 'SP']}/>
-                        <Select label="Status:"    name="status"      store={store} options={['PROCESSING','APPROVED', 'REJECTED','ONGOING','CLOSED']} />
-                        {store.tableData.length === 0 ? null : 
-                            <h2 className="py-4 w-48 font-semibold font-Nunito hidden md:block">ROWS FETCHED: <span className="text-blue-500">{store.tableData.length}</span></h2> }
-                    </div>
-                    <div className="px-3">
-                        <Date label="From:"        name="start_date"  store={store}/>
-                        <Date label="to:"          name="end_date"    store={store}/>
-                    </div>
                     <div className="w-11/12 mx-auto flex flex-wrap content-center justify-center">
                         <Button label="Search" 
                                 position="w-full md:h-20 md:w-24 mt-4 md:mt-0"
                                 callback={ApplicationController.getApplications} 
-                                args={[store.inputs, store.setTableData, csrf, false, history, authenticateFalseAction]} /> <br /> <br />
+                                args={[store.inputs, store.setTableData, csrf, true, history, authenticateFalseAction]} /> <br /> <br />
                                 {store.tableData.length === 0 ? null : 
                             <h2 className="py-4 font-semibold font-Nunito md:hidden">ROWS FETCHED: <span className="text-blue-500">{store.tableData.length}</span></h2> }
                     </div>
                 </div>
             </div>
             {/* content */}
-            {
-                    store.ApplicationDetails
-                ?
-                    <ApplicationDetailsView 
-                        details={store.ApplicationDetails}  
-                        tableStore={store}  
-                        csrf={csrf}
-                        history={history}
-                        authenticateFalseAction={authenticateFalseAction}
-                        />
-                :
-                    <ApplicationTable 
-                        tableData={store.tableData} 
-                        setApplicationDetails={store.setApplicationDetails}
-                        csrf={csrf}
-                        history={history}
-                        authenticateFalseAction={authenticateFalseAction}
-                        />
-            }
+            {store.passbookItems.length > 0 ? <PassbookItems tableData={store.passbookItems} setTableData={store.setPassbookItems} />
+                                            : <ApplicationTable store={store} csrf={csrf} history={history} authenticateFalseAction={authenticateFalseAction}/>}
         </div>
     )
 }
 
-export default ApplicationReview;
+export default CustomerApplications;

@@ -15,7 +15,7 @@ app.use(favicon(__dirname + '/build/favicon.ico'));
 //proxy api end points
 app.use('/login',  createProxyMiddleware({ target: proxyHost }));
 app.use('/csrf-token',  createProxyMiddleware({ target: proxyHost }));
-app.use('/isLoggedIn',  createProxyMiddleware({ target: proxyHost }));
+app.use('/isStillAuthenticated',  createProxyMiddleware({ target: proxyHost }));
 app.use('/logout',  createProxyMiddleware({ target: proxyHost }));
 app.use('/application_form',  createProxyMiddleware({ target: proxyHost }));
 app.use('/application_form-details',  createProxyMiddleware({ target: proxyHost }));

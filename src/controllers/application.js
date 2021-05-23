@@ -2,9 +2,16 @@ import { toast } from  'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { changeManyValue } from './operations';
 
+const denyUserRequest = (history, authenticateFalseAction) => {
+    authenticateFalseAction();
+    let { from } = { from: { pathname: "/notAuthenticated" } };
+    history.replace(from);
+    return '';
+}
+
 toast.configure();
 const ApplicationController = {
-    AddApplication: async (inputs, csrf, history) => {
+    AddApplication: async (inputs, csrf, history, authenticateFalseAction) => {
         return fetch('/application_form', {
             method: 'POST',
             headers: {'Content-Type': 'application/json',
@@ -15,26 +22,41 @@ const ApplicationController = {
             return res.json();
         })
         .then(data => {
-            if(data.subject === "success"){
-                 toast.success(data.message, {autoClose: 5000});
-                 history.push({pathname: "/application?q=CreateApplication"});
-                 history.goBack();
-            }
-               
-            else if(data.error){
+            if (data.error) {
                 if(data.error.field && data.error.message)
                     toast.error(`${data.error.field} ${data.error.message}`,{autoClose: 20000});
                 else if(data.error.message)
                     toast.error(data.error.message, {autoClose: 20000});
                 else
                     throw new Error('something went wrong');
-            } 
+            }
+
+            if (data && data.authenticated === false) 
+                denyUserRequest(history, authenticateFalseAction);
+            else if (data.subject === "success") {
+                 toast.success(data.message, {autoClose: 5000});
+                 history.push({pathname: "/application?q=CreateApplication"});
+                 history.goBack();
+            }
+
+            return;
         })
         .catch(err => {
             toast.error('something went wrong, please call system administrator', {autoClose: 20000});
         })
     },
-    getApplications: (inputs, setTableData, csrf) => {
+    getApplications: (inputs, setTableData, csrf, isDefaultDate, history, authenticateFalseAction) => {
+        let start_date, end_date;
+        if (isDefaultDate) {
+            if (!inputs.first_name && !inputs.last_name)
+                return toast.error('first name and last name must be specified', {autoClose: 5000});
+            const currentDate = new Date().toISOString().split('T')[0];
+            start_date = '2020-01-01';
+            end_date = currentDate;
+        } else {
+            start_date = inputs.start_date
+            end_date = inputs.end_date
+        }
         let query = JSON.stringify({
             area_code: inputs.area_code,
             first_name: inputs.first_name,
@@ -42,7 +64,7 @@ const ApplicationController = {
             type_loan: inputs.type_loan,
             status: inputs.status
         });
-        return fetch(`/application_form/${inputs.start_date}/${inputs.end_date}?inputs=${query}`,{
+        return fetch(`/application_form/${start_date}/${end_date}?inputs=${query}`,{
             method: 'GET',
             headers: {'Content-Type':'application/json',
                       'X-CSRF-TOKEN': csrf},
@@ -51,26 +73,33 @@ const ApplicationController = {
             return data.json();
         })
         .then(data => {
-            if(data.error){
-                if(data.error.field && data.error.message)
+            if(data.error) {
+                if (data.error.field && data.error.message){
                     toast.error(`${data.error.field} ${data.error.message}`,{autoClose: 20000});
-                else if(data.error.message)
+                    return;
+                }
+                else if (data.error.message) {
                     toast.error(data.error.message, {autoClose: 5000});
+                    return;
+                }
                 else
-                    toast.error('Something went wrong call System Administrator', {autoClose: 5000});
+                    throw new Error('Something went wrong call System Administrator');
             }
-            else if(data.length > 0){
+
+            if (data && data.authenticated === false) 
+                denyUserRequest(history, authenticateFalseAction);
+            else if (data.length > 0) {
                 setTableData(data);
                 toast.success('Successfuly retrieved Applications', {autoClose: 10000});
             }
             else
-                 toast.error('Something went wrong call System Administrator', {autoClose: 5000});
+                throw new Error('Something went wrong call System Administrator');
         })
         .catch(err => {
             toast.error(`${err}`,{autoClose: 20000});
         })
     },
-    getApplicationDetail: async (area_code, formId, setApplicationDetails, csrf) => {
+    getApplicationDetail: async (area_code, formId, setApplicationDetails, csrf, history, authenticateFalseAction) => {
         return fetch(`/application_form-details/${area_code}/${formId}`,{
             method: 'GET',
             headers: {'Content-Type': 'application/json',
@@ -80,7 +109,12 @@ const ApplicationController = {
             return data.json();
         })
         .then(data => {
-            if(data.customer && data.application)
+            if (data.error) 
+                throw new Error('Something went wrong');
+            
+            if (data && data.authenticated === false) 
+                denyUserRequest(history, authenticateFalseAction);
+            else if(data.customer && data.application)
                 setApplicationDetails(data);
             else
                 toast.error('Something went wrong', {autoClose: 20000});
@@ -89,7 +123,7 @@ const ApplicationController = {
             toast.error(`${err}`,{autoClose: 20000});
         })
     },
-    updateApplication: async (param, setTableData, setApplicationDetails, csrf) => {
+    updateApplication: async (param, setTableData, setApplicationDetails, csrf, history, authenticateFalseAction) => {
         param.fieldValue = param.fields[`${param.fieldName}`];
         return fetch('/application_form',{
             method: 'PUT',
@@ -112,9 +146,13 @@ const ApplicationController = {
                 throw new Error({error:"something went wrong"});
             else if(data.error)
                 toast.error(data.error.message, {autoClose: 10000});
+            
+            if (data && data.authenticated === false) 
+                denyUserRequest(history, authenticateFalseAction);
             else
                 toast.success(`${data.message} Updated successfuly`, {autoClose:5000});
-            if(param.areaCode)
+
+            if(param.areaCode && !data.error)
                 changeManyValue(param.tableData, param.areaCode, param.fieldName, param.fieldValue,  param.id, setTableData);  
             setApplicationDetails(null);
         })

@@ -3,16 +3,14 @@ import { useHistory } from 'react-router-dom';
 
 import './styles.css'
 import GeneralActions from '../../actions/general';
-import { MainHooks, AuthUser, GetCsrfToken } from '../mainHooks/AuthHooks';
-
-
-
+import { MainHooks } from '../mainHooks/AuthHooks';
+import authStore from '../../store/store';
 
 const Login = () => {
     let history = useHistory();
     let store = MainHooks();
-    let { csrf } = GetCsrfToken();
     let { InputChange } = GeneralActions;
+    const authenticateAction = authStore((state) => state.authenticateAction);
 
     return(
         <>
@@ -56,7 +54,7 @@ const Login = () => {
                         </div>
 
                         <button className="h-10 mt-12 mx-auto text-white rounded-sm bg-green-500 hover:bg-green-400 focus:outline-none" 
-                                 onClick={() => AuthUser.loginUser(store.inputs.username, store.inputs.password, csrf, history)}> 
+                                 onClick={() => authenticateAction(store.inputs.username, store.inputs.password, history)}> 
                                 Sign In
                         </button>
 

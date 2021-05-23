@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 //hooks
 import { Hooks } from './hooks';
 //elements
@@ -10,12 +11,14 @@ import CalendarItems from './table';
 //controller
 import ReportsController from '../../../../controllers/reports';
 //Authentication
-import { IsUserStillLoggedIn } from '../../../mainHooks/AuthHooks';
+import authStore from '../../../../store/store';
 
 
 
 const CalendarReports = () => {
-    let { csrf } = IsUserStillLoggedIn();
+    const csrf = authStore((state) => state.csrfToken);
+    const authenticateFalseAction = authStore((state) => state.authenticateFalseAction);
+    let history = useHistory();
     const store = Hooks();
     return(
         <div id="content-wrapper">
@@ -47,7 +50,7 @@ const CalendarReports = () => {
                         <Button label="Search" 
                                 position="w-full md:h-20 md:w-24 mt-4 md:mt-0"
                                 callback={ReportsController.getCalendarItems} 
-                                args={[store.inputs, csrf, store.setDates, store.setCustomerPayments]} />
+                                args={[store.inputs, csrf, store.setDates, store.setCustomerPayments, history, authenticateFalseAction]} />
                     </div>
                 </div>
             </div>

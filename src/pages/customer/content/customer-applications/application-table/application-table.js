@@ -1,15 +1,13 @@
 import React from 'react';
-
 //controllers
-import ApplicationController from '../../../../controllers/application';
-
+import PassbookController from '../../../../../controllers/passbook'
 //elements
-import Button from '../../../../elements/button';
-
+import Button from '../../../../../elements/button';
 // css
 import '../styles.css';
 
-const ApplicationTable = ({tableData, setApplicationDetails, csrf, history, authenticateFalseAction}) => {
+const ApplicationTable = ({store, csrf, history, authenticateFalseAction}) => {
+    const tableData = store.tableData;
 
     return (
         <div id="table-wrapper">
@@ -34,10 +32,10 @@ const ApplicationTable = ({tableData, setApplicationDetails, csrf, history, auth
                                 <td>{i.status}</td>
                                 <td>{i.date_issued.split('T')[0]}</td>
                                 <td>{i.created_by}</td>
-                                <td className="flex flex-wrap justify-center content-center"><Button label="Review" 
-                                            position="w-16 mt-2"
-                                            callback={ApplicationController.getApplicationDetail} 
-                                            args={[i.area_code, i.id, setApplicationDetails, csrf, history, authenticateFalseAction]} />
+                                <td className="flex flex-wrap justify-center content-center"><Button label="Payments" 
+                                            position="w-20 mt-2"
+                                            callback={PassbookController.getPassbookItems} 
+                                            args={[{ formId: i.id }, store.setPassbookItems, store.setCustomerInfo, store.setBalance, csrf, history, authenticateFalseAction]} />
                                 </td>
                             </tr>   
                         ))}

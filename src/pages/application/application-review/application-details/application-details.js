@@ -10,7 +10,7 @@ import Row from './components/rows';
 //elements
 import Dialog from '../../../../elements/dialog';
 
-const ApplicationDetailsView = ({details, tableStore, csrf}) => {
+const ApplicationDetailsView = ({details, tableStore, csrf, history, authenticateFalseAction}) => {
 
  return(
         <div id="content-wrapper">
@@ -98,7 +98,7 @@ const ApplicationDetailsView = ({details, tableStore, csrf}) => {
                             position="w-40"
                             callback={Dialog.confirm} 
                             args={[PassbookController.postPassbook, 
-                                   [details.customer.area_code, details.application.id, csrf], 
+                                   [details.customer.area_code, details.application.id, csrf, history, authenticateFalseAction], 
                                    'Creating Passbook!', 
                                    'are you sure you want to create passbook this customer?'
                                 ]}

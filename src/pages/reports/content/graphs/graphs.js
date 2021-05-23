@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 //hooks
 import { Hooks } from './hooks';
 //elements
@@ -10,10 +11,12 @@ import GraphContent from './content';
 //controller
 import ReportsController from '../../../../controllers/reports';
 //Authentication
-import { IsUserStillLoggedIn } from '../../../mainHooks/AuthHooks';
+import authStore from '../../../../store/store';
 
 const GraphReports = () => {
-	let { csrf } = IsUserStillLoggedIn();
+	const csrf = authStore((state) => state.csrfToken);
+    const authenticateFalseAction = authStore((state) => state.authenticateFalseAction);
+    let history = useHistory();
 	const store = Hooks();
 
 	const ShowDialogContent = () => {
@@ -39,7 +42,7 @@ const GraphReports = () => {
 					onClick={() =>
 						Dialog.filterDialog(
 							ReportsController.getLineGraphValues,
-							[store.inputs, csrf, store.setLineGraph],
+							[store.inputs, csrf, store.setLineGraph, history, authenticateFalseAction],
 							ShowDialogContent
 						)
 					}

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React  from 'react';
 //npm packages
 import { render } from '@testing-library/react';
@@ -200,12 +201,6 @@ describe('HeaderText', () => {
         const results = renderHook(headerHook);
         perform(ApplicationActions.HeaderText, ['CreateApplication', results.setText]);
         expect(results.text).toEqual("CREATE APPLICATION");
-    });
-
-    it('REVIEW APPLICATION', () => {
-        const results = renderHook(headerHook);
-        perform(ApplicationActions.HeaderText, ['ReviewApplications', results.setText]);
-        expect(results.text).toEqual("REVIEW APPLICATION");
     });
 });
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+
 //actions
 import ApplicationActions from '../../../../../actions/application';
 //controllers
@@ -8,9 +10,13 @@ import Input from '../../../../../elements/input';
 import Button from '../../../../../elements/button';
 //Hooks
 import { RowHooks } from './row-hooks';
+import authStore from '../../../../../store/store';
 
 
 const Row = ({id, label, displayValue, fieldName, updateType, tableStore, areaCode, csrf}) => {
+    const authenticateFalseAction = authStore((state) => state.authenticateFalseAction);
+
+    const history = useHistory();
     const store = RowHooks();
     return(
         <div>
@@ -34,7 +40,9 @@ const Row = ({id, label, displayValue, fieldName, updateType, tableStore, areaCo
                 },
                 tableStore.setTableData,
                 tableStore.setApplicationDetails,
-                csrf
+                csrf,
+                history,
+                    authenticateFalseAction
                 ]} />
             </>:null}
         </div>

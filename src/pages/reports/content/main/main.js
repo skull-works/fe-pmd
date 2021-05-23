@@ -1,10 +1,8 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../../../layout/header/header';
-import { IsUserStillLoggedIn } from '../../../mainHooks/AuthHooks';
 
 const MainReports = () => {
-    IsUserStillLoggedIn();
     let boxCss = 'w-full h-20 rounded-full flex flex-wrap content-center justify-center bg-gray-800 hover:bg-green-500';
     return (
         <Fragment>
