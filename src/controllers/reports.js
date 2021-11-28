@@ -22,6 +22,11 @@ const ReportsController = {
 				)
 					.then((res) => res.json())
 					.catch((err) => err);
+				
+				if(data.error) {
+					toast.error(data.error.message, {autoClose:5000});
+					return;
+				}
 
 				if (data && data.authenticated === false) 
                 	denyUserRequest(history, authenticateFalseAction);
@@ -58,6 +63,11 @@ const ReportsController = {
 				}
 			);
 			let data = await response.json();
+
+			if(data.error) {
+				toast.error(data.error.message, {autoClose:5000});
+				return;
+			}
 
 			if (data && data.authenticated === false) 
 				denyUserRequest(history, authenticateFalseAction);

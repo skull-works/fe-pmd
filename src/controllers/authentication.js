@@ -46,7 +46,11 @@ const AuthenticationController = {
             })
             .then(res => res.json())
             .catch(err => err);
-            if (data.error) 
+            if (data.error && data.error.message) {
+                toast.error(data.error.message || 'Not able to login in try again', {autoClose: 5000});
+                return { authenticated: false }
+            }
+            else if (data.error)
                 throw new Error('Something went wrong in checking the authentication');
             return data;
         }catch(err){

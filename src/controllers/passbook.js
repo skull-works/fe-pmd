@@ -77,7 +77,7 @@ const PassbookController = {
         })
         .then(res => res.json())
         .then(data => {
-            if(data.error) {                                                  //usually if no passbook found
+            if(data.error) {                                                  // usually if no passbook found
                 toast.error(data.error.message, {autoClose:5000})
                 return;
             }
@@ -101,6 +101,7 @@ const PassbookController = {
                 method: 'DELETE',
                 headers: { 'X-CSRF-TOKEN': csrf } 
             });
+
             if (res.status === 401) 
                 denyUserRequest(history, authenticateFalseAction);
             
@@ -109,6 +110,15 @@ const PassbookController = {
                 setTableData(filteredData);
                 return toast.success('Successfuly deleted', { autoClose: 5000 });
             }
+
+            const data = await res.json();
+
+            if(data.error) {
+                toast.error(data.error.message, {autoClose:5000});
+                denyUserRequest(history, authenticateFalseAction);
+                return;
+            }
+
             return toast.error('Something went wrong, contact system administrator', { autoClose: 5000 });
             
         }catch(err){
