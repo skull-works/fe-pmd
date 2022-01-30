@@ -109,7 +109,11 @@ const ApplicationController = {
             return data.json();
         })
         .then(data => {
-            if (data.error) 
+            if (data.error && data.error.message) {
+                toast.error(data.error.message || 'Not able to login in try again', {autoClose: 5000});
+                return false
+            }
+            else if (data.error)
                 throw new Error('Something went wrong');
             
             if (data && data.authenticated === false) 
@@ -144,8 +148,10 @@ const ApplicationController = {
         .then(data => {
             if(data.name === 'SequelizeDatabaseError')
                 throw new Error({error:"something went wrong"});
-            else if(data.error)
+            else if (data.error) {
                 toast.error(data.error.message, {autoClose: 10000});
+                return;
+            }
             
             if (data && data.authenticated === false) 
                 denyUserRequest(history, authenticateFalseAction);

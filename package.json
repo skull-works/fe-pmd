@@ -22,7 +22,7 @@
 	"scripts": {
 		"start": "node server.js",
 		"dev": "react-scripts start",
-		"build": "react-scripts build",
+		"build": "react-scripts --openssl-legacy-provider build",
 		"test": "react-scripts test --unhandled-rejections=strict",
 		"eject": "react-scripts eject",
 		"build:css": "tailwindcss build src/tailwindcss/styles.css -o public/styles.css",
